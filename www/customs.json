@@ -1,0 +1,10 @@
+{
+  "elements": {},
+  "attributes": {
+    "ng-model": {},
+    "ng-view": {},
+    "ng-submit": {
+      "context": "form"
+    }
+  }
+}
