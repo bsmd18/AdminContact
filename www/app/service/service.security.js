@@ -1,4 +1,4 @@
-angular.module('ensayo').service('securityService', ['$http', 'serverUrl', function($http, serverUrl){
+angular.module('contact').service('securityService', ['$http', 'serverUrl', function($http, serverUrl){
     
     this.validateUserAndPassword = function (data) {
       return $http.post(serverUrl + 'identificar' , $.param(data));

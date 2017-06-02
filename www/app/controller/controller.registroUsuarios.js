@@ -1,4 +1,4 @@
-angular.module('ensayo').controller('registroController', ['$scope', 'contactosServices', function ($scope, contactosServices) {
+angular.module('contact').controller('registroUsuariosController', ['$scope', 'contactosServices', function ($scope, contactosServices) {
 
     $scope.contacto = {};
 
