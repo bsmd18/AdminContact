@@ -5,12 +5,6 @@
  */
 class usuarioDAO extends dataSource implements IUsuario {
 
-  /**
-   * funcion para hacer borrado logico o permanente
-   * @param type $id
-   * @param type $logico
-   * @return integer
-   */
   public function delete($id, $logico = true) {
 
     if ($logico === true) {

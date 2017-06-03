@@ -10,7 +10,7 @@ class insertarContacto extends controllerExtends {
     $contacto->setNombre($request->getParam('nombre'));
     $contacto->setApellido($request->getParam('apellido'));
     $contacto->setEdad($request->getParam('edad'));
-
+    
     $registroContantosDaoExt = new registroContactosDAO($this->getConfig());
     $row = $registroContantosDaoExt->insert($contacto);
 

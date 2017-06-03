@@ -5,11 +5,6 @@
  */
 class registroContactosDAO extends dataSource implements IregistroContactos {
 
-  /**
-   * Mètodo para el borrado de un registro.
-   * @param Integer $id
-   * @return Integer
-   */
   public function delete($id) {
     $sql = 'DELETE FROM contacto WHERE con_id = :id';
     $params = array(
@@ -18,11 +13,6 @@ class registroContactosDAO extends dataSource implements IregistroContactos {
     return $this->execute($sql, $params);
   }
 
-  /**
-   * Metodo para insertar el registro de una persona en la BD.
-   * @param \registroPersonal $rePersonal
-   * @return Integer
-   */
   public function insert(registroContactos $reContactos) {
     $sql = 'INSERT INTO contacto (con_foto,con_nombre,con_apellido,con_edad) VALUES (:foto,:nombre,:apellido,:edad)';
     $params = array(
@@ -42,12 +32,7 @@ class registroContactosDAO extends dataSource implements IregistroContactos {
     $sql = 'SELECT con_foto,con_nombre, con_apellido, con_edad FROM contacto';
     return $this->query($sql);
   }
-
-  /**
-   * Metodo para seleccionar un registro que se busca por id.
-   * @param Integer $id
-   * @return array of stdClass
-   */
+   
   public function selectById($id) {
 
     $sql = 'SELECT con_foto,con_nombre, con_apellido, con_edad FROM contacto WHERE con_id = :id';

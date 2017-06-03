@@ -5,10 +5,7 @@
  */
 class registroContactos {
 
-  /**
-   * Llave Foranea,Principal y campo autoincrementable de la tabla Personal.
-   * @var Integer  
-   */
+  
   private $id;
 
   /**
