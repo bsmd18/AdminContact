@@ -2,11 +2,11 @@
 
 class usuarioDAOExt extends usuarioDAO {
 
-  public function search($usuario, $contrasena) {
-    $sql = 'SELECT rol_id, usu_id, usu_usuario FROM usuario WHERE usu_usuario = :user AND usu_contrasena = :pass';
+  public function search($correo, $clave) {
+    $sql = 'SELECT rol_id, usu_codigo, usu_correo FROM usuarios WHERE usu_correo = :correo AND usu_clave = :clave';
     $params = array(
-        ':user' => $usuario,
-        ':pass' => $contrasena,
+        ':correo' => $correo,
+        ':clave' => $clave
     );
     
     return $this->query($sql, $params);

@@ -4,11 +4,12 @@ interface IUsuario {
 
   public function select();
 
-  public function selectById($id);
+  public function selectById($codigo);
 
   public function insert(usuario $usuario);
 
   public function update(usuario $usuario);
 
-  public function delete($id, $logico = true);
+  public function delete($codigo);
+  
 }

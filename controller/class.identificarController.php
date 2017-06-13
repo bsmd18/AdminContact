@@ -6,17 +6,18 @@ class identificar extends controllerExtends {
     try {
       $this->loadTableUsuario();
 
-      $user = $request->getParam('usuario');     
-      $password = hash($this->getConfig()->getHash(), $request->getParam('contrasena'), false);
+      $correo = $request->getParam('correo');     
+      $password = hash($this->getConfig()->getHash(), $request->getParam('clave'), false);
 
       $usuarioDAO = new usuarioDAOExt($this->getConfig());
-      $respuesta = $usuarioDAO->search($user, $password);      
-      $respuesta = array(
+      $respuesta = $usuarioDAO->search($correo, $password);     
+      
+      $respuesta1 = array(
           'codigo' => (count($respuesta) > 0) ? 200 : 500,
           'usuario' => $respuesta
       );
 
-      $this->setParam('rsp', $respuesta);
+      $this->setParam('rsp', $respuesta1);
       $this->setView('imprimirJson');
     } catch (Exception $exc) {
       echo $exc->getMessage();

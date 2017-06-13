@@ -2,10 +2,11 @@ angular.module('contact').controller('loginController', ['$scope', 'securityServ
     
     $scope.datos = {};
     
+    $scope.usuarioErroneo = false;
+    
     $scope.submit = function () {
 
       security.validateUserAndPassword($scope.datos).then(function successCallback(response) {
-        console.log(response);
         $scope.usuarioErroneo = false;
         if (response.data.codigo == 500) {
           $scope.usuarioErroneo = true;

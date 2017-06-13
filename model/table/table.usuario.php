@@ -2,104 +2,163 @@
 
 class usuario {
 
-  /**
-   * Llave Principal y campo autoincrementable de la tabla Usuario	
-   * @var integer 
-   */
-  private $id;
+    /**
+     * Llave Principal y campo autoincrementable de la tabla Usuario	
+     * @var integer 
+     */
+    private $codigo;
 
-  /**
-   * Nombre del usuario con el cual se hara el ingreso al aplicativo
-   * @var string 
-   */
-  private $usuario;
+    /**
+     * Nombre del usuario con el cual se hara el ingreso al aplicativo
+     * @var string 
+     */
+    private $nombres;
 
-  /**
-   * Se utliza para el ingreso a la aplicación y verificar el usuario		
-   * @var string
-   */
-  private $contrasena;
+    /**
+     * Se utliza para el ingreso a la aplicación y verificar el usuario		
+     * @var string
+     */
+    private $correo;
+    private $clave;
+    private $razon_social;
+    private $cargo;
+    private $direccion;
+    private $ciudad;
+    private $pais;
+    private $departamento;
+    private $telefono;
+    private $fecha_registro;
+    private $pagina_web;
+    private $descripcion;
+    private $estado;
+    private $rol;
 
-  /**
-   * se divide en 2 (admin-Invitado) el admin puede agregar los invitados y controlar la base de datos, el invitado solo puede controlar la aplicación	
-   * @var integer
-   */
-  private $rol_id;
+    function getCodigo() {
+        return $this->codigo;
+    }
 
-  /**
-   * se utiliza para saber cuando se creo el usuario	
-   * @var string 
-   */
-  private $created_at;
+    function getNombres() {
+        return $this->nombres;
+    }
 
-  /**
-   * se utiliza para saber cuando se hace un update en el usuario	
-   * @var string 
-   */
-  private $updated_at;
+    function getCorreo() {
+        return $this->correo;
+    }
 
-  /**
-   * se utiliza para saber cuando se elimina el usuario	
-   * @var string
-   */
-  private $deleted_at;
+    function getClave() {
+        return $this->clave;
+    }
 
-  function getId() {
-    return $this->id;
-  }
+    function getRazon_social() {
+        return $this->razon_social;
+    }
 
-  function getUsuario() {
-    return $this->usuario;
-  }
+    function getCargo() {
+        return $this->cargo;
+    }
 
-  function getContrasena() {
-    return $this->contrasena;
-  }
+    function getDireccion() {
+        return $this->direccion;
+    }
 
-  function getRol_id() {
-    return $this->rol_id;
-  }
+    function getCiudad() {
+        return $this->ciudad;
+    }
 
-  function getCreated_at() {
-    return $this->created_at;
-  }
+    function getPais() {
+        return $this->pais;
+    }
 
-  function getUpdated_at() {
-    return $this->updated_at;
-  }
+    function getDepartamento() {
+        return $this->departamento;
+    }
 
-  function getDeleted_at() {
-    return $this->deleted_at;
-  }
+    function getTelefono() {
+        return $this->telefono;
+    }
 
-  function setId($id) {
-    $this->id = $id;
-  }
+    function getFecha_registro() {
+        return $this->fecha_registro;
+    }
 
-  function setUsuario($usuario) {
-    $this->usuario = $usuario;
-  }
+    function getPagina_web() {
+        return $this->pagina_web;
+    }
 
-  function setContrasena($contrasena) {
-    $this->contrasena = $contrasena;
-  }
+    function getDescripcion() {
+        return $this->descripcion;
+    }
 
-  function setRol_id($rol_id) {
-    $this->rol_id = $rol_id;
-  }
+    function getEstado() {
+        return $this->estado;
+    }
 
-  function setCreated_at($created_at) {
-    $this->created_at = $created_at;
-  }
+    function getRol() {
+        return $this->rol;
+    }
 
-  function setUpdated_at($updated_at) {
-    $this->updated_at = $updated_at;
-  }
+    function setCodigo($codigo) {
+        $this->codigo = $codigo;
+    }
 
-  function setDeleted_at($deleted_at) {
-    $this->deleted_at = $deleted_at;
-  }
+    function setNombres($nombres) {
+        $this->nombres = $nombres;
+    }
 
+    function setCorreo($correo) {
+        $this->correo = $correo;
+    }
 
-  
+    function setClave($clave) {
+        $this->clave = $clave;
+    }
+
+    function setRazon_social($razon_social) {
+        $this->razon_social = $razon_social;
+    }
+
+    function setCargo($cargo) {
+        $this->cargo = $cargo;
+    }
+
+    function setDireccion($direccion) {
+        $this->direccion = $direccion;
+    }
+
+    function setCiudad($ciudad) {
+        $this->ciudad = $ciudad;
+    }
+
+    function setPais($pais) {
+        $this->pais = $pais;
+    }
+
+    function setDepartamento($departamento) {
+        $this->departamento = $departamento;
+    }
+
+    function setTelefono($telefono) {
+        $this->telefono = $telefono;
+    }
+
+    function setFecha_registro($fecha_registro) {
+        $this->fecha_registro = $fecha_registro;
+    }
+
+    function setPagina_web($pagina_web) {
+        $this->pagina_web = $pagina_web;
+    }
+
+    function setDescripcion($descripcion) {
+        $this->descripcion = $descripcion;
+    }
+
+    function setEstado($estado) {
+        $this->estado = $estado;
+    }
+
+    function setRol($rol) {
+        $this->rol = $rol;
+    }
+
 }

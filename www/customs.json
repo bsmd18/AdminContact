@@ -1,10 +1,14 @@
 {
-  "elements": {},
-  "attributes": {
-    "ng-model": {},
-    "ng-view": {},
-    "ng-submit": {
-      "context": "form"
+    "elements": {},
+    "attributes": {
+        "ng-show": {},
+        "ng-model": {},
+        "ng-view": {},
+        "ng-submit": {
+            "context": "form"
+        },
+        "ng-repeat": {
+            "context": "option"
+        }
     }
-  }
 }
