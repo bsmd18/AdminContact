@@ -40,7 +40,7 @@ angular.module('contact').config(['$routeProvider', '$httpProvider', function co
                     middleware: ['comprobarSession', 'comprobarPermisoDeAdmnistracion']
                 }).
                 when('/menuPrincipal', {
-                    controller: 'registroController',
+                    controller: 'menuPrincipalController',
                     templateUrl: 'app/template/menuPrincipal.html',
                     middleware: ['comprobarSession']
                 }).

@@ -3,9 +3,9 @@ function middlewareComprobarNoTenerSesion($this, $localStorage, $sessionStorage,
     $this.next();
   } else {
     if ($sessionStorage.usuario.rol_id == rolAdmin) {
-      $this.redirectTo('/formularioUsuario');
-    } else {
       $this.redirectTo('/menuPrincipal');
+    } else {
+      $this.redirectTo('/');
     }
   }
 }
