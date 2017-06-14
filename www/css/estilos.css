@@ -9,8 +9,9 @@
     padding: 1vh;
 }
 
-.formulariopersonal{
-    margin-top: 1vh;
+.formulariopersonal1{
+    /*padding: 1vh;*/
+    padding-right: 1vh;
     /*border: 2px solid background;*/
 }
 
@@ -19,6 +20,12 @@
     margin-top: 5vh;
     font-size: 10vh;
     color: royalblue;
+}
+
+.btnElTabla{
+    cursor: pointer;
+    font-size: 25px;
+    color: dodgerblue;
 }
 
 /*--------------------------------------Login---------------------------------------------------*/

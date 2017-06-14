@@ -18,6 +18,7 @@ class usuario {
      * Se utliza para el ingreso a la aplicación y verificar el usuario		
      * @var string
      */
+    private $apellidos;
     private $correo;
     private $clave;
     private $razon_social;
@@ -32,13 +33,17 @@ class usuario {
     private $descripcion;
     private $estado;
     private $rol;
-
+    
     function getCodigo() {
         return $this->codigo;
     }
 
     function getNombres() {
         return $this->nombres;
+    }
+
+    function getApellidos() {
+        return $this->apellidos;
     }
 
     function getCorreo() {
@@ -103,6 +108,10 @@ class usuario {
 
     function setNombres($nombres) {
         $this->nombres = $nombres;
+    }
+
+    function setApellidos($apellidos) {
+        $this->apellidos = $apellidos;
     }
 
     function setCorreo($correo) {

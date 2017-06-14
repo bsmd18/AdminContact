@@ -1,14 +1,18 @@
 {
-    "elements": {},
-    "attributes": {
-        "ng-show": {},
-        "ng-model": {},
-        "ng-view": {},
-        "ng-submit": {
-            "context": "form"
-        },
-        "ng-repeat": {
-            "context": "option"
-        }
-    }
+	"elements": {},
+	"attributes": {
+		"ng-show": {},
+		"ng-model": {},
+		"ng-click": {},
+		"ng-view": {},
+		"ng-submit": {
+			"context": "form"
+		},
+		"ng-repeat": {
+			"context": "option"
+		},
+		"ng-app": {
+			"context": "html"
+		}
+	}
 }

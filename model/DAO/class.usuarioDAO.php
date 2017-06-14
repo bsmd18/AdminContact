@@ -25,10 +25,10 @@ class usuarioDAO extends dataSource implements IUsuario {
    * @return integer
    */
   public function insert(\usuario $usuario) {
-    $sql = 'INSERT INTO usuarios (usu_nombres, usu_apellidos, usu_correo, usu_clave, usu_razon_social, usu_cargo, usu_direccion, usu_ciudad, usu_pais, usu_departamento, usu_telefono, usu_fecha_registro, usu_pagina_web, usu_descripcion, usu_estado, rol_id) VALUES (:nombres, :apellidos, :correo, :clave, :razonsocial, :cargo, :direccion, :ciudad, :pais, :departamento, :telefono, :fecharegistro, :paginaweb, :descripcion, :estado, :rol)';
+    $sql = 'INSERT INTO usuarios (usu_nombres, usu_apellidos, usu_correo, usu_clave, usu_razon_social, usu_cargo, usu_direccion, usu_ciudad, usu_pais, usu_departamento, usu_telefono, usu_fecha_registro, usu_pagina_web, usu_descripcion, usu_estado, rol_id) VALUES (:nombres, :apellidos, :correo, :clave, :razonsocial, :cargo, :direccion, :ciudad, :pais, :departamento, :telefono, now(), :paginaweb, :descripcion, :estado, :rol)';
     $params = array(
-        ':nombres' => $usuario->getUsuario(),
-        ':apellidos' => $usuario->getContrasena(),
+        ':nombres' => $usuario->getNombres(),
+        ':apellidos' => $usuario->getApellidos(),
         ':correo' => $usuario->getCorreo(),
         ':clave' => $usuario->getClave(),
         ':razonsocial' => $usuario->getRazon_social(),
@@ -38,7 +38,6 @@ class usuarioDAO extends dataSource implements IUsuario {
         ':pais' => $usuario->getPais(),
         ':departamento' => $usuario->getDepartamento(),
         ':telefono' => $usuario->getTelefono(),
-        ':fecharegistro' => $usuario->getFecha_registro(),
         ':paginaweb' => $usuario->getPagina_web(),
         ':descripcion' => $usuario->getDescripcion(),
         ':estado' => $usuario->getEstado(),
@@ -75,7 +74,7 @@ class usuarioDAO extends dataSource implements IUsuario {
    * @return integer
    */
   public function update(\usuario $usuario) {
-    $sql = 'UPDATE usuarios SET usu_nombres = :nombres, usu_apellidos = :apellidos, usu_correo = :correo, usu_clave = :clave, usu_razon_social = :razonsocial, usu_cargo = :cargo, usu_direccion = :direccion, usu_ciudad = :ciudad, usu_pais = :pais, usu_departamento = :departamento, usu_telefono = :telefono, usu_fecha_registro = :fecharegistro, usu_pagina_web = :paginaweb, usu_descripcion = :descripcion, usu_estado = :estado, rol_id = :rol WHERE usu_codigo = :codigo';
+    $sql = 'UPDATE usuarios SET usu_nombres = :nombres, usu_apellidos = :apellidos, usu_correo = :correo, usu_clave = :clave, usu_razon_social = :razonsocial, usu_cargo = :cargo, usu_direccion = :direccion, usu_ciudad = :ciudad, usu_pais = :pais, usu_departamento = :departamento, usu_telefono = :telefono, usu_pagina_web = :paginaweb, usu_descripcion = :descripcion, usu_estado = :estado, rol_id = :rol WHERE usu_codigo = :codigo';
     $params = array(
         ':nombres' => $usuario->getUsuario(),
         ':apellidos' => $usuario->getContrasena(),
@@ -88,7 +87,6 @@ class usuarioDAO extends dataSource implements IUsuario {
         ':pais' => $usuario->getPais(),
         ':departamento' => $usuario->getDepartamento(),
         ':telefono' => $usuario->getTelefono(),
-        ':fecharegistro' => $usuario->getFecha_registro(),
         ':paginaweb' => $usuario->getPagina_web(),
         ':descripcion' => $usuario->getDescripcion(),
         ':estado' => $usuario->getEstado(),
