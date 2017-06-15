@@ -1,7 +1,16 @@
-angular.module('contact').controller('registroUsuariosController', ['$scope', 'usuariosServices', function ($scope, usuariosServices) {
+angular.module('contact').controller('registroUsuariosController', ['$scope', 'usuariosServices', '$timeout', '$sessionStorage', function ($scope, usuariosServices, timeout, sessionStorage) {
 
 		$scope.usuario = {};
 		$scope.usuarioT = {};
+		$scope.usuarioEl = {};
+		$scope.accion = {};
+		$scope.btnaccion = {};
+		$scope.usuarioGuardado = false;
+		$scope.usuarioEditado = false;
+		$scope.usuarioEliminado = false;
+		$scope.contrasenaerronea = false;
+
+		/*-------------------------------------------------------------------------------Array Países-----------------------------------------------------------------------------*/
 
 		$scope.paises = ["Afganistán", "Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila", "Antártida", "Antigua y Barbuda", "Antillas Neerlandesas",
 			"Arabia Saudí", "Arctic Ocean", "Argelia", "Argentina", "Armenia", "Aruba", "Ashmore andCartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaiyán",
@@ -27,26 +36,134 @@ angular.module('contact').controller('registroUsuariosController', ['$scope', 'u
 			"Uganda", "Unión Europea", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam", "Wake Island", "Wallis y Futuna", "West Bank", "World", "Yemen", "Yibuti",
 			"Zambia", "Zimbabue"];
 
-		$scope.cargarTabla = function(){
+		/*--------------------------------------------------Cargar Tabla---------------------------------------------------------*/
+
+		$scope.cargarTabla = function () {
 			$scope.usuario.accion = 'cargarT';
-			usuariosServices.cargarUsuarios($scope.usuario).then(function succesCallback(response) {
-				
+			usuariosServices.crudUsuarios($scope.usuario).then(function succesCallback(response) {
 				$scope.usuarioT = response.data.datos;
-				
-				console.log(response.data.datos);
-				
 			}, function errorCallback(response) {
 			});
 		};
-		
+
 		$scope.cargarTabla();
-		
-		$scope.insertUsuario = function () {
-			$scope.usuario.accion = 'insert';
-			usuariosServices.insertUsuario($scope.usuario).then(function succesCallback(response) {
+
+		/*--------------------------------------------------------Nuevo Usuario------------------------------------------------------*/
+
+		$scope.nuevo = function () {
+
+			$scope.accion.accion = 'Nuevo Usuario';
+			$scope.usuario = {};
+			$scope.btnaccion.accion = 'Guardar';
+
+		};
+
+		/*-------------------------------------------------------Editar Usuario-------------------------------------------------------*/
+
+		$scope.editar = function ($datos) {
+
+			$scope.accion.accion = 'Editar Usuario';
+			$scope.btnaccion.accion = 'Editar';
+
+			$scope.usuario.codigo = $datos.usu_codigo;
+			$scope.usuario.nombres = $datos.usu_nombres;
+			$scope.usuario.apellidos = $datos.usu_apellidos;
+			$scope.usuario.correo = $datos.usu_correo;
+			$scope.usuario.clave = $datos.usu_clave;
+			$scope.usuario.rol = $datos.rol_id;
+			$scope.usuario.razonsocial = $datos.usu_razon_social;
+			$scope.usuario.cargo = $datos.usu_cargo;
+			$scope.usuario.pais = $datos.usu_pais;
+			$scope.usuario.departamento = $datos.usu_departamento;
+			$scope.usuario.ciudad = $datos.usu_ciudad;
+			$scope.usuario.direccion = $datos.usu_direccion;
+			$scope.usuario.estado = $datos.usu_estado;
+			$scope.usuario.telefono = parseInt($datos.usu_telefono);
+			$scope.usuario.paginaweb = $datos.usu_pagina_web;
+			$scope.usuario.descripcion = $datos.usu_descripcion;
+
+		};
+
+		/*----------------------------------Guardar el Registro independiente de si es Insert o Update--------------------------------------*/
+
+		$scope.guardarUsuario = function () {
+			
+			if($scope.usuario.clave === $scope.usuario.confirmarclave){
+				if ($scope.accion.accion === 'Nuevo Usuario') {
+				$scope.usuario.accion = 'insert';
+				usuariosServices.crudUsuarios($scope.usuario).then(function succesCallback(response) {
+					sessionStorage.msgGuardado = true;
+					timeout(function () {
+						$('#usuarios').modal('toggle');
+					}, 700);
+					timeout(function () {
+						// $route.reload();
+						window.location.reload();
+					}, 1000);
+				}, function errorCallback(response) {
+				});
+			} else if ($scope.accion.accion === 'Editar Usuario') {
+				$scope.usuario.accion = 'update';
+				usuariosServices.crudUsuarios($scope.usuario).then(function succesCallback(response) {
+					sessionStorage.msgEditado = true;
+					timeout(function () {
+						$('#usuarios').modal('toggle');
+					}, 700);
+					timeout(function () {
+						// $route.reload();
+						window.location.reload();
+					}, 1000);
+				}, function errorCallback(response) {
+				});
+			}
+			}else{
+				$scope.contrasenaerronea = true;
+			}
+		};
+
+		/*--------------------------------------------------------------------Eliminar Usuario-------------------------------------------------------------------*/
+
+		$scope.eliminar = function (usuario) {
+			$('#eliminarUsuario').modal('toggle');
+			$scope.usuarioEl.codigo = usuario.usu_codigo;
+			$scope.usuarioEl.nombres = usuario.usu_nombres;
+			$scope.usuarioEl.apellidos = usuario.usu_apellidos;
+		};
+
+		$scope.eliminarUsuario = function () {
+			$scope.usuarioEl.accion = 'delete';
+			usuariosServices.crudUsuarios($scope.usuarioEl).then(function successCallback(response) {
+				
+				if (response.data.code == 500) {
+					console.log('error al eliminar');
+				} else {
+					sessionStorage.msgEliminado = true;
+					console.log(response);
+					timeout(function () {
+						$('#eliminarUsuario').modal('toggle');
+					}, 700);
+					timeout(function () {
+						// $route.reload();
+						window.location.reload();
+					}, 1000);
+				}
 			}, function errorCallback(response) {
+				console.error(response);
 			});
 		};
+
+		/*-------------------------------------------------------------Mensages Success---------------------------------------------------------*/
+
+		if (sessionStorage.msgGuardado === true) {
+			$scope.usuarioGuardado = sessionStorage.msgGuardado;
+			delete sessionStorage.msgGuardado;
+		} else if (sessionStorage.msgEditado === true) {
+			$scope.usuarioEditado = sessionStorage.msgEditado;
+			delete sessionStorage.msgEditado;
+		}else if (sessionStorage.msgEliminado === true){
+			$scope.usuarioEliminado = sessionStorage.msgEliminado;
+			delete sessionStorage.msgEliminado;
+		}
 
 	}]);
 

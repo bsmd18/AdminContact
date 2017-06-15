@@ -17,15 +17,26 @@
 
 .botonesaplicacion{
     /*border:  2px solid greenyellow;*/
-    margin-top: 5vh;
-    font-size: 10vh;
+    margin-top: 1vh;
+    font-size: 5vh;
     color: royalblue;
+	height: 5vh;
 }
 
 .btnElTabla{
     cursor: pointer;
     font-size: 25px;
     color: dodgerblue;
+}
+
+.msgsuccess{
+    margin-top: -1vh;
+    margin-bottom: 1vh;
+	text-align: center;
+}
+
+.tablausers{
+	height: 78vh;
 }
 
 /*--------------------------------------Login---------------------------------------------------*/

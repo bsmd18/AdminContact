@@ -1,98 +1,111 @@
+<!---------------------------------------------------------------------------Cabecera---------------------------------------------------------------------------------->
+
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <br>
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<br>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#!/formularioUsuario">Usuarios</a></li>
+					<li><a href="#">Contactos</a></li>
+					<li><a href="#">Empresas</a></li>
+					<li><a href="#">Servicios</a></li>
+					<li><a href="#">Facturas</a></li>
+					<li><a href="#!/proyectos">Proyectos</a></li>
+				</ul>
+			</div>
+		</div>
 
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#!/formularioUsuario">Usuarios</a></li>
-                    <li><a href="#">Contactos</a></li>
-                    <li><a href="#">Empresas</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Facturas</a></li>
-                    <li><a href="#!/proyectos">Proyectos</a></li>
-                </ul>
-            </div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        </div>
+			<ul class="nav navbar-nav navbar-right">
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-            <ul class="nav navbar-nav navbar-right">
-
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle iconUser" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-off iconoBarra" aria-hidden="true"></span> <span class="caret"></span></a>
-                    <ul class="dropdown-menu panelCerrarSession">
-                        <li>
-                            <div>
-                                <div class="panel " style="width: 280px">
-                                    <div class="panel-body ">                    
-                                        <a href="#!/logout"><button class="btn-block btn-group-lg btn-success botonCerrarCession">Cerrar Session</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle iconUser" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-off iconoBarra" aria-hidden="true"></span> <span class="caret"></span></a>
+					<ul class="dropdown-menu panelCerrarSession">
+						<li>
+							<div>
+								<div class="panel " style="width: 280px">
+									<div class="panel-body ">                    
+										<a href="#!/logout"><button class="btn-block btn-group-lg btn-success botonCerrarCession">Cerrar Session</button></a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
 </nav>
 
-<div class="row col-lg-offset-1 col-lg-10 table-responsive tablausers">
-    <table class="table">
-        <tr>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Correo</th>
-            <th>Rol</th>
-            <th>Razón Social</th>
-            <th>Cargo</th>
-            <th>País</th>
-            <th>Departamento</th>
-            <th>Ciudad</th>
-            <th>Dirección</th>
-            <th>Estado</th>
-            <th>Telefóno</th>
-            <th>Pagina Web</th>
-            <th>Descripción</th>
-            <th>Acción</th>
-        </tr>
-        <tr ng-repeat="user in usuarioT">
-            <td>{{user.usu_nombres}}</td>
-            <td>{{user.usu_apellidos}}</td>
-            <td>{{user.usu_correo}}</td>
-            <td>{{user.rol_id}}</td>
-            <td>{{user.usu_razon_social}}</td>
-            <td>{{user.usu_cargo}}</td>
-            <td>{{user.usu_pais}}</td>
-            <td>{{user.usu_departamento}}</td>
-            <td>{{user.usu_ciudad}}</td>
-            <td>{{user.usu_direccion}}</td>
-            <td>{{user.usu_estado}}</td>
-            <td>{{user.usu_telefono}}</td>
-            <td>{{user.usu_pagina_web}}</td>
-            <td>{{user.usu_descripcion}}</td>
-            <td>
-                <a href="#!/formularioContactosE"><i ng-click="editar(user)"  title="Editar" class="glyphicon glyphicon-edit btnElTabla"></i></a>
-                <i ng-click="eliminar(user)" title="Eliminar" class="glyphicon glyphicon-trash btnElTabla"></i>
-            </td>
-            <!--<i ng-click="eliminar(user)" title="Eliminar" class="glyphicon glyphicon-trash"></i></td>-->
-        </tr>
+<!--------------------------------------------------------------------Mensajes de Success------------------------------------------------------------------------->
 
-    </table>
+<div class="col-lg-offset-1 col-lg-10 alert alert-success alert-dismissible msgsuccess" role="alert" ng-show="usuarioGuardado">Usuario Guardado Correctamente
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="col-lg-offset-1 col-lg-10 alert alert-success alert-dismissible msgsuccess" role="alert" ng-show="usuarioEditado">Usuario Editado Correctamente
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="col-lg-offset-1 col-lg-10 alert alert-success alert-dismissible msgsuccess" role="alert" ng-show="usuarioEliminado">Usuario Eliminado Correctamente
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+
+<!--------------------------------------------------------------------Tabla Usuarios------------------------------------------------------------------------------>
+
+<div class="row col-lg-offset-1 col-lg-10 table-responsive tablausers">
+	<table class="table">
+		<tr>
+			<th>Nombres</th>
+			<th>Apellidos</th>
+			<th>Correo</th>
+			<th>Rol</th>
+			<th>Razón Social</th>
+			<th>Cargo</th>
+			<th>País</th>
+			<th>Departamento</th>
+			<th>Ciudad</th>
+			<th>Dirección</th>
+			<th>Estado</th>
+			<th>Telefóno</th>
+			<th>Pagina Web</th>
+			<th>Descripción</th>
+			<th>Acción</th>
+		</tr>
+		<tr ng-repeat="user in usuarioT">
+			<td>{{user.usu_nombres}}</td>
+			<td>{{user.usu_apellidos}}</td>
+			<td>{{user.usu_correo}}</td>
+			<td>{{user.rol_id}}</td>
+			<td>{{user.usu_razon_social}}</td>
+			<td>{{user.usu_cargo}}</td>
+			<td>{{user.usu_pais}}</td>
+			<td>{{user.usu_departamento}}</td>
+			<td>{{user.usu_ciudad}}</td>
+			<td>{{user.usu_direccion}}</td>
+			<td>{{user.usu_estado}}</td>
+			<td>{{user.usu_telefono}}</td>
+			<td>{{user.usu_pagina_web}}</td>
+			<td>{{user.usu_descripcion}}</td>
+			<td>
+				<i aria-hidden="true" data-toggle="modal" data-target="#usuarios" ng-click="editar(user)"  title="Editar" class="glyphicon glyphicon-edit btnElTabla"></i>
+				<i ng-click="eliminar(user)" title="Eliminar" class="glyphicon glyphicon-trash btnElTabla"></i>
+			</td>
+		</tr>
+
+	</table>
 	<!--    <nav aria-label="...">
 			<ul class="pager">
 				<li class="previous disabled"><a href="#!/inicio"><span aria-hidden="true">&larr;</span> Anterior</a></li>
@@ -101,163 +114,192 @@
 		</nav>-->
 </div>
 
+<!--------------------------------------------------------------------Mensajes de Success------------------------------------------------------------------------->
+
 <form>
-
-    <div class="">
-        <div class="col-lg-12 botonesaplicacion text-center">
-            <span title="Nuevo" class="glyphicon glyphicon-plus-sign" aria-hidden="true" data-toggle="modal" data-target="#nuevoUsuario"></span>
-            <a href="#!/menuPrincipal"><button type="submit" class="glyphicon glyphicon-remove"></button></a>
-        </div>
-    </div>
-
+	<div class="col-lg-12 botonesaplicacion text-center">
+		<span title="Nuevo" class="glyphicon glyphicon-plus-sign" ng-click="nuevo()" aria-hidden="true" data-toggle="modal" data-target="#usuarios"></span>
+		<a href="#!/menuPrincipal"><span title="Cancelar" type="submit" class="glyphicon glyphicon-remove"></span></a>
+	</div>
 </form>
 
-<div class="modal fade bs-example-modal-lg" data-keyboard="false" data-backdrop="static" tabindex="-1" id="nuevoUsuario" role="dialog" aria-labelledby="mySmallModalLabel">
+<!------------------------------------------------------------------------Modal de Registro Usuarios------------------------------------------------------------------->
+
+<div class="modal fade bs-example-modal-lg" data-keyboard="false" data-backdrop="static" tabindex="-1" id="usuarios" role="dialog" aria-labelledby="mySmallModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-circle"></i>
-                    Nuevo Usuario</h4>
+                    {{accion.accion}}</h4>
             </div>
             <div class="modal-body">
-                <form ng-submit="insertUsuario()">
-						<div class="col-lg-offset-1 col-lg-10 contenedorPrincipal">
+				<div class="alert alert-danger msgsuccess" ng-show="contrasenaerronea">
+                    <center>Las Claves no Coinciden</center>
+                </div>
+				
+                <form ng-submit="guardarUsuario()">
+					<div class="col-lg-offset-1 col-lg-10 contenedorPrincipal">
 
-							<div class="col-lg-offset-1 col-lg-4 form-horizontal formulariopersonal">
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.nombres" type="text" class=" form-control colorformulario" aria-label="..." id="nombre" placeholder="Ingresar Nombre" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.apellidos" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Apellido" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.correo" type="text" class=" form-control colorformulario" id="idpersonal" placeholder="Ingresar Correo" required>
-									</div>
-								</div>  
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.clave" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Clave" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input type="text" class=" form-control colorformulario" id="nombre" placeholder="Confirmar Clave" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<select name="rol" ng-model="usuario.rol" class="form-control colorformulario" required>
-											<option value="">Seleccione Rol</option>
-											<option value="1">Administrador</option>
-											<option value="2">Invitado</option>
-										</select>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.razonsocial" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Razón Social" required>
-									</div>
-								</div>  
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.cargo" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Cargo" required>
-									</div> 
+						<div class="col-lg-offset-1 col-lg-4 form-horizontal formulariopersonal">
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.nombres" type="text" class=" form-control colorformulario" aria-label="..." id="nombre" placeholder="Ingresar Nombre" required>
 								</div>
 							</div>
-
-							<div class="col-lg-offset-2 col-lg-4 form-horizontal formulariopersonal1">
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<select name="pais1" ng-model="usuario.pais" class="form-control colorformulario" required>
-											<option value="" >Seleccione País</option>
-											<option ng-repeat="pais in paises" value="{{pais}}" >{{pais}}</option>
-										</select>
-									</div>
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.apellidos" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Apellido" required>
 								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.departamento" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Departamento" ng-disabled="disabledCelularFamilia" required>
-									</div>
+							</div>
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.correo" type="text" class=" form-control colorformulario" id="idpersonal" placeholder="Ingresar Correo" required>
 								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.ciudad" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Ciudad" required>
-									</div>
+							</div>  
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-focus="contrasenaerronea = false" ng-model="usuario.clave" type="password" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Clave" required>
+								</div>
+							</div>
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-focus="contrasenaerronea = false" ng-model="usuario.confirmarclave" type="password" class=" form-control colorformulario" id="nombre" placeholder="Confirmar Clave" required>
+								</div>
+							</div>
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<select name="rol" ng-model="usuario.rol" class="form-control colorformulario" required>
+										<option value="">Seleccione Rol</option>
+										<option value="1">Administrador</option>
+										<option value="2">Invitado</option>
+									</select>
+								</div>
+							</div> 
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.razonsocial" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Razón Social" required>
+								</div>
+							</div>  
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.cargo" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Cargo" required>
 								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.direccion" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Direccion" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.estado" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Estado" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.telefono" type="number" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Telefóno" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.paginaweb" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Pagina Web" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="usuario.descripcion" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Descripcion" required>
-									</div>
-								</div> 
-								<!--            <div class="form-group anchura">
-												<label for="ficha" class=" col-lg-5 control-label labelpersonal">Fecha Registro</label>
-												<div class="col-lg-6">
-													<input ng-model="personal.fecharegistro" type="date" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Fecha">
-												</div>
-											</div> -->
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary btn-block btn-sm">Guardar</button>
-					</form>
+
+						<div class="col-lg-offset-2 col-lg-4 form-horizontal formulariopersonal1">
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<select name="pais1" ng-model="usuario.pais" class="form-control colorformulario" required>
+										<option value="" >Seleccione País</option>
+										<option ng-repeat="pais in paises" value="{{pais}}" >{{pais}}</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.departamento" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Departamento" ng-disabled="disabledCelularFamilia" required>
+								</div>
+							</div>
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.ciudad" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Ciudad" required>
+								</div>
+							</div> 
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.direccion" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Direccion" required>
+								</div>
+							</div> 
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.estado" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Estado" required>
+								</div>
+							</div> 
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.telefono" type="number" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Telefóno" required>
+								</div>
+							</div> 
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.paginaweb" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Pagina Web" required>
+								</div>
+							</div> 
+							<div class="form-group anchura">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									</span>
+									<input ng-model="usuario.descripcion" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Descripcion" required>
+								</div>
+							</div> 
+							<!--            <div class="form-group anchura">
+											<label for="ficha" class=" col-lg-5 control-label labelpersonal">Fecha Registro</label>
+											<div class="col-lg-6">
+												<input ng-model="personal.fecharegistro" type="date" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Fecha">
+											</div>
+										</div> -->
+						</div>
+					</div>
+					<div class="">
+						<button type="submit" class="btn btn-success btn-block btn-sm">{{btnaccion.accion}}</button>
+						<button type="reset" class="btn btn-default btn-block btn-sm">Limpiar</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
+</div>
+
+<!----------------------------------------------------------------------------Modal Confirmacion Eliminar------------------------------------------------------------>
+
+<div class="modal fade bs-example-modal-sm" data-keyboard="false" data-backdrop="static" tabindex="-1" id="eliminarUsuario" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
+                    Eliminar Usuario</h4>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <h4>¿Esta seguro?</h4>
+                    <p>Se va a eliminar el Contacto</p>
+                    <h3>{{usuarioEl.nombres}} {{usuarioEl.apellidos}}</h3>
+                </center>
+                <button ng-click="eliminarUsuario()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+            </div>
+        </div>
+    </div>
 </div>
