@@ -18,7 +18,7 @@
 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 					<li><a href="#">Inicio</a></li>
 					<li><a href="#!/formularioUsuario">Usuarios</a></li>
-					<li><a href="#">Contactos</a></li>
+					<li><a href="#!/registrocontactos">Contactos</a></li>
 					<li><a href="#">Empresas</a></li>
 					<li><a href="#">Servicios</a></li>
 					<li><a href="#">Facturas</a></li>
@@ -137,49 +137,49 @@
 				<div class="alert alert-danger msgsuccess" ng-show="contrasenaerronea">
                     <center>Las Claves no Coinciden</center>
                 </div>
-				
+
                 <form ng-submit="guardarUsuario()">
 					<div class="col-lg-offset-1 col-lg-10 contenedorPrincipal">
 
 						<div class="col-lg-offset-1 col-lg-4 form-horizontal formulariopersonal">
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Nombres" class="input-group-addon"><i class="fa fa-user-circle-o"></i>
 									</span>
-									<input ng-model="usuario.nombres" type="text" class=" form-control colorformulario" aria-label="..." id="nombre" placeholder="Ingresar Nombre" required>
+									<input ng-model="usuario.nombres" type="text" class=" form-control colorformulario" aria-label="..." id="nombre" placeholder="Ingresar Nombres" required>
 								</div>
 							</div>
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Apellidos" class="input-group-addon"><i class="fa fa-user-circle-o"></i>
 									</span>
-									<input ng-model="usuario.apellidos" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Apellido" required>
+									<input ng-model="usuario.apellidos" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Apellidos" required>
 								</div>
 							</div>
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Correo" class="input-group-addon"><i class="fa fa-envelope"></i>
 									</span>
 									<input ng-model="usuario.correo" type="text" class=" form-control colorformulario" id="idpersonal" placeholder="Ingresar Correo" required>
 								</div>
 							</div>  
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Contraseña" class="input-group-addon"><i class="fa fa-lock"></i>
 									</span>
 									<input ng-focus="contrasenaerronea = false" ng-model="usuario.clave" type="password" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Clave" required>
 								</div>
 							</div>
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Confirmar Contraseña" class="input-group-addon"><i class="fa fa-lock"></i>
 									</span>
 									<input ng-focus="contrasenaerronea = false" ng-model="usuario.confirmarclave" type="password" class=" form-control colorformulario" id="nombre" placeholder="Confirmar Clave" required>
 								</div>
 							</div>
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Seleccionar Rol" class="input-group-addon"><i class="fa fa-user-circle-o"></i>
 									</span>
 									<select name="rol" ng-model="usuario.rol" class="form-control colorformulario" required>
 										<option value="">Seleccione Rol</option>
@@ -190,14 +190,14 @@
 							</div> 
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Razón Social" class="input-group-addon"><i class="fa fa-user-circle-o"></i>
 									</span>
 									<input ng-model="usuario.razonsocial" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Razón Social" required>
 								</div>
 							</div>  
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Cargo" class="input-group-addon"><i class="fa fa-user-circle-o"></i>
 									</span>
 									<input ng-model="usuario.cargo" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Cargo" required>
 								</div> 
@@ -207,7 +207,7 @@
 						<div class="col-lg-offset-2 col-lg-4 form-horizontal formulariopersonal1">
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Seleccionar País" class="input-group-addon"><i class="fa fa-globe"></i>
 									</span>
 									<select name="pais1" ng-model="usuario.pais" class="form-control colorformulario" required>
 										<option value="" >Seleccione País</option>
@@ -217,61 +217,56 @@
 							</div>
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Departamento" class="input-group-addon"><i class="fa fa-globe"></i>
 									</span>
 									<input ng-model="usuario.departamento" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Departamento" ng-disabled="disabledCelularFamilia" required>
 								</div>
 							</div>
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Ciudad" class="input-group-addon"><i class="fa fa-globe"></i>
 									</span>
 									<input ng-model="usuario.ciudad" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Ciudad" required>
 								</div>
 							</div> 
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Dirección" class="input-group-addon"><i class="fa fa-street-view"></i>
 									</span>
 									<input ng-model="usuario.direccion" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Direccion" required>
 								</div>
 							</div> 
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Estado" class="input-group-addon"><i class="fa fa-user-circle-o"></i>
 									</span>
 									<input ng-model="usuario.estado" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Estado" required>
 								</div>
 							</div> 
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Telefóno" class="input-group-addon"><i class="fa fa-mobile"></i>
 									</span>
 									<input ng-model="usuario.telefono" type="number" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Telefóno" required>
 								</div>
 							</div> 
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Pagina Web" class="input-group-addon"><i class="fa fa-globe"></i>
 									</span>
 									<input ng-model="usuario.paginaweb" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Pagina Web" required>
 								</div>
 							</div> 
 							<div class="form-group anchura">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+									<span title="Ingresar Descripción" class="input-group-addon"><i class="fa fa-file-text"></i>
 									</span>
 									<input ng-model="usuario.descripcion" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Descripcion" required>
 								</div>
 							</div> 
-							<!--            <div class="form-group anchura">
-											<label for="ficha" class=" col-lg-5 control-label labelpersonal">Fecha Registro</label>
-											<div class="col-lg-6">
-												<input ng-model="personal.fecharegistro" type="date" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Fecha">
-											</div>
-										</div> -->
 						</div>
 					</div>
+					
 					<div class="">
 						<button type="submit" class="btn btn-success btn-block btn-sm">{{btnaccion.accion}}</button>
 						<button type="reset" class="btn btn-default btn-block btn-sm">Limpiar</button>

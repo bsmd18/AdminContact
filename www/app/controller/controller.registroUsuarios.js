@@ -69,7 +69,7 @@ angular.module('contact').controller('registroUsuariosController', ['$scope', 'u
 			$scope.usuario.nombres = $datos.usu_nombres;
 			$scope.usuario.apellidos = $datos.usu_apellidos;
 			$scope.usuario.correo = $datos.usu_correo;
-			$scope.usuario.clave = $datos.usu_clave;
+//			$scope.usuario.clave = $datos.usu_clave;
 			$scope.usuario.rol = $datos.rol_id;
 			$scope.usuario.razonsocial = $datos.usu_razon_social;
 			$scope.usuario.cargo = $datos.usu_cargo;
