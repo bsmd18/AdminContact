@@ -9,5 +9,9 @@
       return $http.post(serverUrl + 'crudContactos', $.param(data));
       
     };
+    this.eliminarContactos = function (data) {
+      return $http.post(serverUrl + 'crudContactos', $.param(data));
+      
+    };
 
   }]);

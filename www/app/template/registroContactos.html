@@ -122,8 +122,8 @@
                             <td>{{contact.tet_codigo}}</td>
                             <td>{{contact.res_codigo}}</td>
                             
-                            <td><i ng-click="editar(contacto)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
-                                <i ng-click="eliminar(contacto)" class="glyphicon glyphicon-trash"></i></td>
+                            <td><i ng-click="editar(contact)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
+                                <i ng-click="eliminar(contact)" class="glyphicon glyphicon-trash"></i></td>
                         </tr>
 
                     </table>
@@ -388,29 +388,24 @@
 
 
 
-<!-- MODAL ELIMINAR COLABORADOR-->
-<div class="modal fade bs-example-modal-sm" tabindex="-1" id="eliminarColaborador" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade bs-example-modal-sm" data-keyboard="false" data-backdrop="static" tabindex="-1" id="eliminarContacto" role="dialog" aria-labelledby="mySmallModalLabel">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
-                    Eliminar Colaborador</h4>
+                    Eliminar Contacto</h4>
             </div>
             <div class="modal-body">
-                <div class="alert alert-success" ng-show="colaboradorEliminado"> 
-                    <center>Colaborador Eliminado</center>
-                </div>
                 <center>
                     <h4>¿Esta seguro?</h4>
-                    <p>Se va a eliminar el colaborador</p>
-                    <h3>{{nombre}}</h3>
+                    <p>Se va a eliminar el Contacto</p>
+                    <h3>{{contactoEl.nombre}} {{contactoEl.apellido}}</h3>
                 </center>
-                <button ng-click="submitEliminarColaborador()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+                <button ng-click="eliminarContacto()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 

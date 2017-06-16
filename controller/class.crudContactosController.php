@@ -47,7 +47,24 @@ class crudContactos extends controllerExtends {
             } catch (Exception $ex) {
                 echo $exc->getMessage();
             }
+             try {
 
+                if ($request->getParam('accion') === 'delete') {
+
+                    $contactoDAO = new contactoDAO($this->getConfig());
+                    $row = $contactoDAO->delete($request->getParam('codigo'));
+
+                    $answer = array(
+                        'code' => ($row > 0) ? 200 : 500,
+                        'row' => $row
+                    );
+
+                    $this->setParam('rsp', $answer);
+                    $this->setView('imprimirJson');
+                }
+            } catch (Exception $ex) {
+                echo $exc->getMessage();
+            }
             try {
                 
                 if($request->getParam('accion')==='cargarT'){

@@ -1,7 +1,8 @@
-angular.module('contact').controller('registroContactosController', ['$scope', 'contactosServices', function ($scope, contactosServices) {
+angular.module('contact').controller('registroContactosController', ['$scope', 'contactosServices','$timeout', function ($scope, contactosServices,timeout) {
 
 		$scope.contacto = {};
 		$scope.contactoT = {};
+                $scope.contactoEl = {};
                 $scope.paises = ["Afganistán", "Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila", "Antártida", "Antigua y Barbuda", "Antillas Neerlandesas",
 			"Arabia Saudí", "Arctic Ocean", "Argelia", "Argentina", "Armenia", "Aruba", "Ashmore andCartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaiyán",
 			"Bahamas", "Bahráin", "Bangladesh", "Barbados", "Bélgica", "Belice", "Benín", "Bermudas", "Bielorrusia", "Birmania Myanmar", "Bolivia", "Bosnia y Hercegovina",
@@ -43,10 +44,52 @@ angular.module('contact').controller('registroContactosController', ['$scope', '
 		$scope.insertContacto = function () {
 			$scope.contacto.accion = 'insert';
 			contactosServices.insertContacto($scope.contacto).then(function succesCallback(response) {
-			}, function errorCallback(response) {
+			if (response.data.code == 500) {
+					console.log('error al eliminar');
+				} else {
+//					sessionStorage.msgEliminado = true;
+//					console.log(response);
+//					timeout(function () {
+//						$('#eliminarContacto').modal('toggle');
+//					}, 700);
+					timeout(function () {
+						// $route.reload();
+						window.location.reload();
+					}, 1000);
+				}
+                        
+                        
+                        }, function errorCallback(response) {
 			});
 		};
-		
+                
+                $scope.eliminar = function (contacto) {
+			$('#eliminarContacto').modal('toggle');
+			$scope.contactoEl.codigo = contacto.ter_codigo;
+			$scope.contactoEl.nombre = contacto.ter_nombres;
+			$scope.contactoEl.apellido = contacto.ter_apellidos;
+		};
+		$scope.eliminarContacto = function () {
+			$scope.contactoEl.accion = 'delete';
+			contactosServices.eliminarContactos($scope.contactoEl).then(function successCallback(response) {
+				
+				if (response.data.code == 500) {
+					console.log('error al eliminar');
+				} else {
+					sessionStorage.msgEliminado = true;
+					console.log(response);
+					timeout(function () {
+						$('#eliminarContacto').modal('toggle');
+					}, 700);
+					timeout(function () {
+						// $route.reload();
+						window.location.reload();
+					}, 1000);
+				}
+			}, function errorCallback(response) {
+				console.error(response);
+			});
+		};
                     $scope.cargarTabla();
 	}]);
 
