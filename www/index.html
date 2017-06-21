@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html ng-app="contact">
-	<head>
-		<title>CRM</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-		<link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-		<link href="css/estilos.css" rel="stylesheet" type="text/css"/>
-		<link href="css/estilosformularioproyectos.css" rel="stylesheet" type="text/css"/>
-	</head>
-	<body>
-		<div ng-view ng-cloak></div>
+  <head>
+    <title>CRM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    <link href="css/estilosformularioproyectos.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div ng-view ng-cloak></div>
 
-		<!-- AngularJS -->
-		<script src="node_modules/angular/angular.min.js"></script>
-		<script src="node_modules/angular-route/angular-route.min.js"></script>
-		<script src="node_modules/angular-resource/angular-resource.min.js"></script>   
-		<script src="js/angular-middleware.min.js"></script>
+    <!-- AngularJS -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>   
+    <script src="js/angular-middleware.min.js"></script>
 
-		<!-- ChartJS para crear gráficas -->
-		<script src="node_modules/chart.js/dist/Chart.min.js"></script>
-		<script src="node_modules/angular-chart.js/dist/angular-chart.js"></script>
+    <!-- ChartJS para crear gráficas -->
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.js"></script>
 
-		<!-- Librerías de AngularJS -->
-		<script src="node_modules/angular-middleware/dist/angular-middleware.min.js"></script>
-		<script src="node_modules/ngstorage/ngStorage.min.js"></script>
+    <!-- Librerías de AngularJS -->
+    <script src="node_modules/angular-middleware/dist/angular-middleware.min.js"></script>
+    <script src="node_modules/ngstorage/ngStorage.min.js"></script>
 
-		<!-- Librerías JavaScript -->
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="node_modules/moment/min/moment.min.js"></script>
+    <!-- Librerías JavaScript -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/moment/min/moment.min.js"></script>
 
-		<!-- Aplicación en AngularJS -->
-		<script src="app/app.js"></script>
-		<script src="app/app.config.js"></script>
+    <!-- Aplicación en AngularJS -->
+    <script src="app/app.js"></script>
+    <script src="app/app.config.js"></script>
 
-		<!-- Servicios de AngularJS -->
-		<script src="app/service/service.usuarios.js"></script>
-		<script src="app/service/service.security.js"></script>
-		<script src="app/service/service.proyectos.js"></script>
-                <script src="app/service/service.contacto.js"></script>
-                
-		<!-- Middelware de AngularJS -->
-		<script src="app/middleware/middleware.comprobarNoTenerSesion.js"></script>
-		<script src="app/middleware/middleware.comprobarPermisoDeAdmnistracion.js"></script>
-		<script src="app/middleware/middleware.comprobarPermisoDeCelador.js"></script>
-		<script src="app/middleware/middleware.comprobarSession.js"></script>
+    <!-- Servicios de AngularJS -->
+    <script src="app/service/service.usuarios.js"></script>
+    <script src="app/service/service.security.js"></script>
+    <script src="app/service/service.proyectos.js"></script>
+    <script src="app/service/service.contacto.js"></script>
 
-		<!-- Controladores de AngularJS -->
-		<script src="app/controller/controller.login.js"></script>
-		<script src="app/controller/controller.logout.js"></script>
-		<script src="app/controller/controller.registroUsuarios.js"></script>
-		<script src="app/controller/controller.menuPrincipal.js"></script>
-		<script src="app/controller/controller.registrarproyectos.js"></script>
-                <script src="app/controller/controller.registroContactos.js"></script>
-	</body>
+    <!-- Middelware de AngularJS -->
+    <script src="app/middleware/middleware.comprobarNoTenerSesion.js"></script>
+    <script src="app/middleware/middleware.comprobarPermisoDeAdmnistracion.js"></script>
+    <script src="app/middleware/middleware.comprobarPermisoDeCelador.js"></script>
+    <script src="app/middleware/middleware.comprobarSession.js"></script>
+
+    <!-- Controladores de AngularJS -->
+    <script src="app/controller/controller.login.js"></script>
+    <script src="app/controller/controller.logout.js"></script>
+    <script src="app/controller/controller.registroUsuarios.js"></script>
+    <script src="app/controller/controller.menuPrincipal.js"></script>
+    <script src="app/controller/controller.registrarproyectos.js"></script>
+    <script src="app/controller/controller.registroContactos.js"></script>
+  </body>
 </html>

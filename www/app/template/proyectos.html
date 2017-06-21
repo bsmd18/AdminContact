@@ -51,72 +51,154 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class=" col-lg-12 ">
+<div class=" col-lg-offset-1 col-lg-10 table-responsive tablausers ">
   <div class="panel panel-default">
     <div class="panel-body">      
-      <div class='row subrayado'>
-        <label class="textoeditarproyecto">Nuevo Poyecto</label>        
-      </div>   
-      <div class='col-lg-5 divform'>
-        <form class="form-horizontal">
-          
-          <div class="form-group" >
-            <label for="inputEmail3" class="col-sm-2 control-label texto" >Nombre</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputEmail3" >
-            </div>
-          </div>
+      <div class='container-fluid contenedor'>
+        <div class=" col-lg-12 table-responsive">
+          <table class="table ">
+            <tr>
+              <th>Nombres</th>
+              <th>Descripción</th>
+              <th>Tipo</th>
+              <th>Valor</th>
+              <th>Estado</th>
+              <th>Fecha Inicio</th>
+              <th>Fecha Final</th>
+              <th>Acción</th>
 
-          <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label texto" >Descripcion</label>
-            <div class="col-sm-10">
-              <input type="text"  class="form-control" id="inputPassword3" required >
-            </div>
-          </div>
+            </tr>
+            <tr ng-repeat="proyect in proyectosT">
+              <td>{{proyect.pro_nombre}}</td>
+              <td>{{proyect.pro_descripcion}}</td>       
+              <td>{{proyect.pro__tipo}}</td>
+              <td>{{proyect.pro_valor}}</td>
+              <td>{{proyect.pro_estado}}</td>
+              <td>{{proyect.pro_fecha_inicio}}</td>
+              <td>{{proyect.pro_fecha_final}}</td>
 
-          <div class="form-group">
-            <label  class="col-sm-2 control-label ">Fecha Inicio</label>
-            <div class="col-sm-10">
-              <input  type="date" class="form-control" id="inputPassword3" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">Fecha Final</label>
-            <div class="col-sm-10">
-              <input  type="date" class="form-control" id="inputPassword3" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label texto">Tipo</label>
-            <div class="col-sm-10">
-              <input  type="text" class="form-control" id="inputPassword3" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label texto">Valor</label>
-            <div class="col-sm-10">
-              <input  type="text" class="form-control" id="inputPassword3" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label texto">Estado</label>
-            <div class="col-sm-10">
-              <input  type="text" class="form-control" id="inputPassword3" required>
-            </div>
-          </div>
-
-          <div class="form-group formulariobotones" >
-            <div class=" col-sm-12">
-              <button  class="btn btn-default">Guardar</button>
-              <button  class="btn btn-default">Editar</button>
-              <a href='#' class="btn btn-default">Eliminar</a>
-            </div>
-          </div>
-        </form> 
+              <td>
+                <i aria-hidden="true" data-toggle="modal" ng-click="editarpro(proyect)" data-target="#nuevoProyecto" title="Editar" class="glyphicon glyphicon-edit btnElTabla"></i>
+                <i ng-click="eliminarpro(proyect)" title="Eliminar" class="glyphicon glyphicon-trash btnElTabla"></i>
+              </td> 
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<form>
+
+  <div class="col-lg-12 botonesaplicacion text-center">
+    <span ng-click="nuevop()" title="Nuevo" class="glyphicon glyphicon-plus-sign" aria-hidden="true" data-toggle="modal" data-target="#nuevoProyecto"></span>
+    <a href="#!/menuPrincipal"><button type="submit" class="glyphicon glyphicon-remove"></button></a>
+  </div>
+
+</form>
+
+<!--<-----------------------------------Modal---------------------------------------------->
+
+<div class="modal fade bs-example-modal-lg" data-keyboard="false" data-backdrop="static" tabindex="-1" id="nuevoProyecto" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-circle"></i>
+          {{accion.accion}}</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="insertarProyecto()">
+          <div class="col-lg-offset-1 col-lg-10 contenedorPrincipal">
+
+            <div class="col-lg-offset-1 col-lg-4 form-horizontal formulariopersonal">
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                  </span>
+                  <input ng-model="proyecto.nombre" type="text" class=" form-control colorformulario" aria-label="..." id="nombre" placeholder="Ingresar Nombre" required>
+                </div>
+              </div>
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                  </span>
+                  <input ng-model="proyecto.descripcion" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Descripción" required>
+                </div>
+              </div>                     
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                  </span>
+                  <input ng-model="proyecto.tipo" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Tipo" required>
+                </div>
+              </div>
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                  </span>
+                  <input ng-model="proyecto.valor" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Valor" required>
+                </div>
+              </div>              
+
+            </div>
+
+            <div class="col-lg-offset-2 col-lg-4 form-horizontal formulariopersonal1">
+
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                  </span>
+                  <input ng-model="proyecto.estado" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Estado" required>
+                </div>
+              </div> 
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-calendar" title="Fecha Inicio"></i>
+                  </span>
+                  <input ng-model="proyecto.fecha_inicio" type="date" class=" form-control colorformulario" id="idpersonal" placeholder="Ingresar Fecha Inicio" required>
+                </div>
+              </div>  
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-calendar" title="Fecha Final"></i>
+                  </span>
+                  <input ng-model="proyecto.fecha_final" type="date" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Fecha Final" required>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-sm">{{btnaccion.accion}}</button>
+          <button type="reset" class="btn btn-success btn-block btn-sm">Limpiar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----------------------------------------------------------------------------Modal Confirmacion Eliminar------------------------------------------------------------>
+
+<div class="modal fade bs-example-modal-sm" data-keyboard="false" data-backdrop="static" tabindex="-1" id="eliminarProyecto" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
+          Eliminar Proyecto</h4>
+      </div>
+      <div class="modal-body">
+        <center>
+          <h4>¿Esta seguro?</h4>
+          <p>Se va a eliminar el Contacto</p>
+          <h3>{{proyectoEl.nombre}}</h3>
+        </center>
+        <button ng-click="eliminarProyecto()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 

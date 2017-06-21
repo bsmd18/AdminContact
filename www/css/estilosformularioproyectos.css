@@ -16,3 +16,7 @@
 .textoeditarproyecto{
   font-size: 20px;
 }
+.contenedor{
+  height: calc(90vh - 244px);
+  overflow: auto;
+}
