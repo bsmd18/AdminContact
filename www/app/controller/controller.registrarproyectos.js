@@ -67,7 +67,7 @@ angular.module('contact').controller('registroproyectosController', ['$scope', '
     /*--------------------------------nuevo proyecto------------------------------------*/
     $scope.nuevop = function () {
 
-      $scope.accion.accion = 'Nuevo Usuario';
+      $scope.accion.accion = 'Nuevo Proyecto';
       $scope.proyecto = {};
       $scope.btnaccion.accion = 'Guardar';
     };
@@ -76,7 +76,7 @@ angular.module('contact').controller('registroproyectosController', ['$scope', '
 
     $scope.editarpro = function ($proyect) {
 
-      $scope.accion.accion = 'Editar Usuario';
+      $scope.accion.accion = 'Editar Proyecto';
       $scope.btnaccion.accion = 'Editar';
       $scope.proyecto.codigo = $proyect.pro_codigo;
       $scope.proyecto.nombre = $proyect.pro_nombre;

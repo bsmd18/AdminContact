@@ -59,6 +59,11 @@ angular.module('contact').config(['$routeProvider', '$httpProvider', function co
                     templateUrl: 'app/template/registroContactos.html',
                     middleware: ['comprobarSession']
                 }).
+                when('/empresa', {
+                    controller: 'registroEmpresaController',
+                    templateUrl: 'app/template/empresa.html',
+                    middleware: ['comprobarSession']
+                }).
                 otherwise('/');
     }]);
 
