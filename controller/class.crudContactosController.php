@@ -10,8 +10,8 @@ class crudContactos extends controllerExtends {
 
             try {
 
-                if ($request->getParam('accion') === 'insert') {
-                    
+                if ($request->getParam('accion') === 'insert' || $request->getParam('accion') === 'update') {
+
                     $contacto = new contacto();
                     $contacto->setDocumento($request->getParam('documento'));
                     $contacto->setNombre($request->getParam('nombre'));
@@ -19,13 +19,12 @@ class crudContactos extends controllerExtends {
                     $contacto->setCorreo($request->getParam('correo'));
                     $contacto->setContacto($request->getParam('contacto'));
                     $contacto->setRasocial($request->getParam('rasocial'));
-                    $contacto->setFechanac($request->getParam('fnacimiento'));
+                    $contacto->setFechanac($request->getParam('fnacimiento1'));
                     $contacto->setDireccion($request->getParam('direccion'));
                     $contacto->setCiudad($request->getParam('ciudad'));
                     $contacto->setPais($request->getParam('pais'));
                     $contacto->setDepartamento($request->getParam('departamento'));
                     $contacto->setTelefono($request->getParam('telefono'));
-                    $contacto->setFecharegistro($request->getParam('fregistro'));
                     $contacto->setPagweb($request->getParam('pagweb'));
                     $contacto->setFoto($request->getParam('foto'));
                     $contacto->setDescripcion($request->getParam('descripcion'));
@@ -33,8 +32,17 @@ class crudContactos extends controllerExtends {
                     $contacto->setTipocodigo($request->getParam('tcodigo'));
                     $contacto->setRescodigo($request->getParam('rcodigo'));
 
-                    $contactoDAO = new contactoDAO($this->getConfig());
-                    $row = $contactoDAO->insert($contacto);
+                    if ($request->getParam('accion') === 'insert') {
+
+                        $contactoDAO = new contactoDAO($this->getConfig());
+                        $row = $contactoDAO->insert($contacto);
+                    } else if ($request->getParam('accion') === 'update') {
+
+                        $contacto->setCodigo($request->getParam('codigo'));
+
+                        $contactoDAO = new contactoDAO($this->getConfig());
+                        $row = $contactoDAO->update($contacto);
+                    }
 
                     $answer = array(
                         'code' => ($row > 0) ? 200 : 500,
@@ -47,7 +55,7 @@ class crudContactos extends controllerExtends {
             } catch (Exception $ex) {
                 echo $exc->getMessage();
             }
-             try {
+            try {
 
                 if ($request->getParam('accion') === 'delete') {
 
@@ -66,9 +74,9 @@ class crudContactos extends controllerExtends {
                 echo $exc->getMessage();
             }
             try {
-                
-                if($request->getParam('accion')==='cargarT'){
-                    
+
+                if ($request->getParam('accion') === 'cargarT') {
+
                     $contactoDAO = new contactoDAO($this->getConfig());
                     $datos = $contactoDAO->select();
 
@@ -79,13 +87,11 @@ class crudContactos extends controllerExtends {
 
                     $this->setParam('rsp', $answer);
                     $this->setView('imprimirJson');
-                    
                 }
-                
             } catch (Exception $ex) {
                 echo $exc->getMessage();
             }
-            
+
             try {
                 
             } catch (Exception $ex) {
@@ -104,4 +110,3 @@ class crudContactos extends controllerExtends {
     }
 
 }
-

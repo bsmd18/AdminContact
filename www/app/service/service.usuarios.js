@@ -5,9 +5,4 @@ angular.module('contact').service('usuariosServices', ['$http', 'serverUrl', fun
       
     };
 	
-//    this.cargarUsuarios = function (data) {
-//      return $http.post(serverUrl + 'crudUsuarios', $.param(data));
-//      
-//    };
-
   }]);

@@ -7,14 +7,14 @@ class contactoDAO extends dataSource implements IContacto {
 //    if ($logico === true) {
 //      $sql = 'UPDATE FROM usuario SET usu_deleted_at = now() WHERE usu_id = :id';
 //    } else {
-      $sql = 'DELETE FROM terceroscontactos WHERE ter_codigo = :codigo';
+        $sql = 'DELETE FROM terceroscontactos WHERE ter_codigo = :codigo';
 //    }
 
-    $params = array(
-        ':codigo' => $codigo
-    );
-    return $this->execute($sql, $params);
-  }
+        $params = array(
+            ':codigo' => $codigo
+        );
+        return $this->execute($sql, $params);
+    }
 
     public function insert(\contacto $contacto) {
         $sql = 'INSERT INTO terceroscontactos (ter_documento, ter_nombres,'
@@ -23,7 +23,7 @@ class contactoDAO extends dataSource implements IContacto {
                 . ' ter_departamento, ter_telefono, ter_fecha_registro, ter_pag_web,ter_foto,'
                 . ' ter_descripcion, ter_estado, tet_codigo, res_codigo)'
                 . ' VALUES (:documento, :nombre, :apellido,'
-                . ' :correo, :contacto, :rsocial, :fnacimiento,:direccion,:ciudad,:pais,:departamento,:telefono,:fregistro,'
+                . ' :correo, :contacto, :rsocial, :fnacimiento,:direccion,:ciudad,:pais,:departamento,:telefono, now(),'
                 . ':pagweb,:foto,:descripcion,:estado,:tcodigo,:rcodigo)';
         $params = array(
             ':documento' => $contacto->getDocumento(),
@@ -38,15 +38,12 @@ class contactoDAO extends dataSource implements IContacto {
             ':pais' => $contacto->getPais(),
             ':departamento' => $contacto->getDepartamento(),
             ':telefono' => $contacto->getTelefono(),
-            ':fregistro' => $contacto->getFecharegistro(),
             ':pagweb' => $contacto->getPagweb(),
             ':foto' => $contacto->getFoto(),
             ':descripcion' => $contacto->getDescripcion(),
             ':estado' => $contacto->getEstado(),
             ':tcodigo' => $contacto->getTipocodigo(),
             ':rcodigo' => $contacto->getRescodigo()
-            
-            
         );
         return $this->execute($sql, $params);
     }
@@ -76,7 +73,7 @@ class contactoDAO extends dataSource implements IContacto {
         $sql = 'UPDATE terceroscontactos set ter_documento = :documento, ter_nombres = :nombre,'
                 . ' ter_apellidos = :apellido, ter_correo = :correo, ter_contacto = :contacto, ter_rason_social =:rsocial,'
                 . ' ter_fecha_nacimiento = :fnacimiento, ter_direccion =:direccion, ter_ciudad=:ciudad, ter_pais=:pais,'
-                . ' ter_departamento=:departamento, ter_telefono=:telefono, ter_fecha_registro=:fregistro, ter_pag_web=:pagweb,ter_foto=:foto,'
+                . ' ter_departamento=:departamento, ter_telefono=:telefono, ter_pag_web=:pagweb,ter_foto=:foto,'
                 . ' ter_descripcion=:descripcion, ter_estado=:estado, tet_codigo=:tcodigo, res_codigo=:rcodigo WHERE ter_codigo=:codigo';
         $params = array(
             ':documento' => $contacto->getDocumento(),
@@ -91,15 +88,13 @@ class contactoDAO extends dataSource implements IContacto {
             ':pais' => $contacto->getPais(),
             ':departamento' => $contacto->getDepartamento(),
             ':telefono' => $contacto->getTelefono(),
-            ':fregistro' => $contacto->getFecharegistro(),
             ':pagweb' => $contacto->getPagweb(),
             ':foto' => $contacto->getFoto(),
             ':descripcion' => $contacto->getDescripcion(),
             ':estado' => $contacto->getEstado(),
             ':tcodigo' => $contacto->getTipocodigo(),
             ':rcodigo' => $contacto->getRescodigo(),
-            ':codigo' => $contacto->getCodigo(),
-            
+            ':codigo' => $contacto->getCodigo()
         );
         return $this->execute($sql, $params);
     }

@@ -1,9 +1,14 @@
-angular.module('contact').controller('registroContactosController', ['$scope', 'contactosServices','$timeout', function ($scope, contactosServices,timeout) {
+angular.module('contact').controller('registroContactosController', ['$scope', 'contactosServices', '$timeout', '$filter', function ($scope, contactosServices, timeout, $filter) {
 
 		$scope.contacto = {};
 		$scope.contactoT = {};
-                $scope.contactoEl = {};
-                $scope.paises = ["Afganistán", "Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila", "Antártida", "Antigua y Barbuda", "Antillas Neerlandesas",
+		$scope.contactoEl = {};
+		$scope.accion = {};
+		$scope.btnaccion = {};
+
+
+
+		$scope.paises = ["Afganistán", "Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila", "Antártida", "Antigua y Barbuda", "Antillas Neerlandesas",
 			"Arabia Saudí", "Arctic Ocean", "Argelia", "Argentina", "Armenia", "Aruba", "Ashmore andCartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaiyán",
 			"Bahamas", "Bahráin", "Bangladesh", "Barbados", "Bélgica", "Belice", "Benín", "Bermudas", "Bielorrusia", "Birmania Myanmar", "Bolivia", "Bosnia y Hercegovina",
 			"Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso", "Burundi", "Bután", "Cabo Verde", "Camboya", "Camerún", "Canadá", "Chad", "Chile", "China", "Chipre",
@@ -26,53 +31,30 @@ angular.module('contact').controller('registroContactosController', ['$scope', '
 			"Territorios Australes Franceses", "Timor Oriental", "Togo", "Tokelau", "Tonga", "Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania",
 			"Uganda", "Unión Europea", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam", "Wake Island", "Wallis y Futuna", "West Bank", "World", "Yemen", "Yibuti",
 			"Zambia", "Zimbabue"];
-		
-		$scope.cargarTabla = function(){
+
+		$scope.cargarTabla = function () {
 			$scope.contacto.accion = 'cargarT';
-			contactosServices.cargarContactos($scope.contacto).then(function succesCallback(response) {
-				
+			contactosServices.crudContactos($scope.contacto).then(function succesCallback(response) {
+
 				$scope.contactoT = response.data.datos;
-				
+
 				console.log(response.data.datos);
-				
+
 			}, function errorCallback(response) {
 			});
 		};
-		
-		
-                
-		$scope.insertContacto = function () {
-			$scope.contacto.accion = 'insert';
-			contactosServices.insertContacto($scope.contacto).then(function succesCallback(response) {
-			if (response.data.code == 500) {
-					console.log('error al eliminar');
-				} else {
-//					sessionStorage.msgEliminado = true;
-//					console.log(response);
-//					timeout(function () {
-//						$('#eliminarContacto').modal('toggle');
-//					}, 700);
-					timeout(function () {
-						// $route.reload();
-						window.location.reload();
-					}, 1000);
-				}
-                        
-                        
-                        }, function errorCallback(response) {
-			});
-		};
-                
-                $scope.eliminar = function (contacto) {
+
+		$scope.eliminar = function (contacto) {
 			$('#eliminarContacto').modal('toggle');
 			$scope.contactoEl.codigo = contacto.ter_codigo;
 			$scope.contactoEl.nombre = contacto.ter_nombres;
 			$scope.contactoEl.apellido = contacto.ter_apellidos;
 		};
+
 		$scope.eliminarContacto = function () {
 			$scope.contactoEl.accion = 'delete';
-			contactosServices.eliminarContactos($scope.contactoEl).then(function successCallback(response) {
-				
+			contactosServices.crudContactos($scope.contactoEl).then(function successCallback(response) {
+
 				if (response.data.code == 500) {
 					console.log('error al eliminar');
 				} else {
@@ -90,7 +72,69 @@ angular.module('contact').controller('registroContactosController', ['$scope', '
 				console.error(response);
 			});
 		};
-                    $scope.cargarTabla();
+		$scope.cargarTabla();
+
+		$scope.newContact = function () {
+
+			$scope.accion.accion = "Nuevo Contacto";
+			$scope.contacto = {};
+			$scope.btnaccion.accion = "Guardar";
+
+		};
+
+		$scope.editContact = function (x) {
+
+			$scope.accion.accion = "Editar Contacto";
+			$scope.btnaccion.accion = "Editar";
+
+			$scope.contacto.codigo = x.ter_codigo;
+			$scope.contacto.documento = x.ter_documento;
+			$scope.contacto.nombre = x.ter_nombres;
+			$scope.contacto.apellido = x.ter_apellidos;
+			$scope.contacto.correo = x.ter_correo;
+			$scope.contacto.contacto = x.ter_contacto;
+			$scope.contacto.rasocial = x.ter_rason_social;
+//			$scope.contacto.fnacimiento = x.ter_fecha_nacimiento;
+			$scope.contacto.fnacimiento = $filter('date')(x.ter_fecha_nacimiento, 'yyyy-MM-dd');
+			$scope.contacto.direccion = x.ter_direccion;
+			$scope.contacto.ciudad = x.ter_ciudad;
+			$scope.contacto.pais = x.ter_pais;
+			$scope.contacto.departamento = x.ter_departamento;
+			$scope.contacto.telefono = x.ter_telefono;
+			$scope.contacto.pagweb = x.ter_pag_web;
+			$scope.contacto.foto = x.ter_foto;
+			$scope.contacto.descripcion = x.ter_descripcion;
+			$scope.contacto.estado = x.ter_estado;
+			$scope.contacto.tcodigo = x.tet_codigo;
+			$scope.contacto.rcodigo = x.res_codigo;
+
+		};
+
+		$scope.guardarContacto = function () {
+
+			$scope.contacto.fnacimiento1 = $filter('date')($scope.contacto.fnacimiento, 'yyyy-MM-dd');
+
+			if ($scope.accion.accion === "Nuevo Contacto") {
+				$scope.contacto.accion = 'insert';
+
+				contactosServices.crudContactos($scope.contacto).then(function succesCallback(response) {
+					timeout(function () {
+						window.location.reload();
+					}, 1000);
+				}, function errorCallback(response) {
+				});
+			} else if ($scope.accion.accion === "Editar Contacto") {
+				$scope.contacto.accion = 'update';
+				contactosServices.crudContactos($scope.contacto).then(function succesCallback(response) {
+					timeout(function () {
+						window.location.reload();
+					}, 1000);
+				}, function errorCallback(response) {
+				});
+			}
+		};
+
+
 	}]);
 
 

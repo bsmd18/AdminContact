@@ -138,7 +138,6 @@ angular.module('contact').controller('registroUsuariosController', ['$scope', 'u
 					console.log('error al eliminar');
 				} else {
 					sessionStorage.msgEliminado = true;
-					console.log(response);
 					timeout(function () {
 						$('#eliminarUsuario').modal('toggle');
 					}, 700);
