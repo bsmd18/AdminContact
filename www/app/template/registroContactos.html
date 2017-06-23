@@ -1,318 +1,318 @@
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <br>
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <br>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#!/formularioUsuario">Usuarios</a></li>
-                    <li><a href="#!/registrocontactos">Contactos</a></li>
-                    <li><a href="#">Empresas</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Facturas</a></li>
-                    <li><a href="#!/proyectos">Proyectos</a></li>
-                </ul>
-            </div>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#!/formularioUsuario">Usuarios</a></li>
+          <li><a href="#!/registrocontactos">Contactos</a></li>
+          <li><a href="#">Empresas</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Facturas</a></li>
+          <li><a href="#!/proyectos">Proyectos</a></li>
+        </ul>
+      </div>
 
-        </div>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
 
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle iconUser" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-off iconoBarra" aria-hidden="true"></span> <span class="caret"></span></a>
-                    <ul class="dropdown-menu panelCerrarSession">
-                        <li>
-                            <div>
-                                <div class="panel " style="width: 280px">
-                                    <div class="panel-body ">                    
-                                        <a href="#!/logout"><button class="btn-block btn-group-lg btn-success botonCerrarCession">Cerrar Session</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle iconUser" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-off iconoBarra" aria-hidden="true"></span> <span class="caret"></span></a>
+          <ul class="dropdown-menu panelCerrarSession">
+            <li>
+              <div>
+                <div class="panel " style="width: 280px">
+                  <div class="panel-body ">
+                    <a href="#!/logout"><button class="btn-block btn-group-lg btn-success botonCerrarCession">Cerrar Session</button></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
 
 <div class="principal col-lg-12">
-    <div class="col-lg-12 body">
-		<div class="col-lg-12 panel panel-default principal">
-			<div class="panel-body">
-				<div class="page-header">
-					<CENTER><h2>REGISTRO DE CONCTACTOS</h2></center>
-				</div>
-			</div>
+  <div class="col-lg-12 body">
+    <div class="col-lg-12 panel panel-default principal">
+      <div class="panel-body">
+        <div class="page-header">
+          <CENTER><h2>REGISTRO DE CONCTACTOS</h2></center>
+        </div>
+      </div>
 
 
-			<div class="row" style="margin-top: 0px;">
-				<div class="col-lg-4">
-					<h4><img ng-click="newContact()" class="img-circle " style="width: 60px; height:60px;" src="img/user.png" data-toggle="modal" data-target="#agregarContacto">Agregar</h4>
-				</div>
-				<div class="col-lg-3 col-lg-offset-5" style="margin-top: 10px;">
-					<form class="form-inline navbar-form navbar-left">
-						<div class="form-group formulario">
-							<input type="text" class="form-control" placeholder="Buscar">
-						</div>
-						<button type="submit" class="btn btn-default botonBuscar">Buscar</button>
-					</form>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 0px;">
-				<div class="col-lg-12" style="margin-top: 20px;">
-					<div class="table-responsive ">
-						<table class="table">
-							<tr>
-								<th>Documento</th>
-								<th>Nombres</th>
-								<th>Apellidos</th>
-								<th>Correo</th>
-								<th>Contacto</th>
-								<th>Razon Social</th>
-								<th>Fecha Nacimiento</th>
-								<th>Direccion</th>
-								<th>Ciudad</th>
-								<th>Pais</th>
-								<th>Departamento</th>
-								<th>Telefono</th>
-								<th>Fecha Registro</th>
-								<th>Pagina Web</th>
-								<th>Foto</th>
-								<th>Descripcion</th>
-								<th>Estado</th>
-								<th>Codigo Tipo</th>
-								<th>Codigo Red Social</th>
-								<th>Acciones</th>
-							</tr>
-							<tr ng-repeat="contact in contactoT">
-								<td>{{contact.ter_documento}}</td>
-								<td>{{contact.ter_nombres}}</td>
-								<td>{{contact.ter_apellidos}}</td>
-								<td>{{contact.ter_correo}}</td>
-								<td>{{contact.ter_contacto}}</td>
-								<td>{{contact.ter_rason_social}}</td>
-								<td>{{contact.ter_fecha_nacimiento}}</td>
-								<td>{{contact.ter_direccion}}</td>
-								<td>{{contact.ter_ciudad}}</td>
-								<td>{{contact.ter_pais}}</td>
-								<td>{{contact.ter_departamento}}</td>
-								<td>{{contact.ter_telefono}}</td>
-								<td>{{contact.ter_fecha_registro}}</td>
-								<td>{{contact.ter_pag_web}}</td>
-								<td>{{contact.ter_foto}}</td>
-								<td>{{contact.ter_descripcion}}</td>
-								<td>{{contact.ter_estado}}</td>
-								<td>{{contact.tet_codigo}}</td>
-								<td>{{contact.res_codigo}}</td>
-								<td><i  aria-hidden="true" data-toggle="modal" data-target="#agregarContacto" ng-click="editContact(contact)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
-									<i ng-click="eliminar(contact)" class="glyphicon glyphicon-trash"></i></td>
-							</tr>
+      <div class="row" style="margin-top: 0px;">
+        <div class="col-lg-4">
+          <h4><img ng-click="newContact()" class="img-circle " style="width: 60px; height:60px;" src="img/user.png" data-toggle="modal" data-target="#agregarContacto">Agregar</h4>
+        </div>
+        <div class="col-lg-3 col-lg-offset-5" style="margin-top: 10px;">
+          <form class="form-inline navbar-form navbar-left">
+            <div class="form-group formulario">
+              <input type="text" class="form-control" placeholder="Buscar">
+            </div>
+            <button type="submit" class="btn btn-default botonBuscar">Buscar</button>
+          </form>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 0px;">
+        <div class="col-lg-12" style="margin-top: 20px;">
+          <div class="table-responsive ">
+            <table class="table">
+              <tr>
+                <th>Documento</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Contacto</th>
+                <th>Razon Social</th>
+                <th>Fecha Nacimiento</th>
+                <th>Direccion</th>
+                <th>Ciudad</th>
+                <th>Pais</th>
+                <th>Departamento</th>
+                <th>Telefono</th>
+                <th>Fecha Registro</th>
+                <th>Pagina Web</th>
+                <th>Foto</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Codigo Tipo</th>
+                <th>Codigo Red Social</th>
+                <th>Acciones</th>
+              </tr>
+              <tr ng-repeat="contact in contactoT">
+                <td>{{contact.ter_documento}}</td>
+                <td>{{contact.ter_nombres}}</td>
+                <td>{{contact.ter_apellidos}}</td>
+                <td>{{contact.ter_correo}}</td>
+                <td>{{contact.ter_contacto}}</td>
+                <td>{{contact.ter_rason_social}}</td>
+                <td>{{contact.ter_fecha_nacimiento}}</td>
+                <td>{{contact.ter_direccion}}</td>
+                <td>{{contact.ter_ciudad}}</td>
+                <td>{{contact.ter_pais}}</td>
+                <td>{{contact.ter_departamento}}</td>
+                <td>{{contact.ter_telefono}}</td>
+                <td>{{contact.ter_fecha_registro}}</td>
+                <td>{{contact.ter_pag_web}}</td>
+                <td>{{contact.ter_foto}}</td>
+                <td>{{contact.ter_descripcion}}</td>
+                <td>{{contact.ter_estado}}</td>
+                <td>{{contact.tet_codigo}}</td>
+                <td>{{contact.res_codigo}}</td>
+                <td><i  aria-hidden="true" data-toggle="modal" data-target="#agregarContacto" ng-click="editContact(contact)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
+                  <i ng-click="eliminar(contact)" class="glyphicon glyphicon-trash"></i></td>
+              </tr>
 
-						</table>
+            </table>
 
-					</div>
-				</div>
-			</div>
+          </div>
+        </div>
+      </div>
 
-		</div>
-	</div>
+    </div>
+  </div>
 
-	<!----------------------------------------------------------------Modal Registro Contactos---------------------------------------------------------------------->
-	<div class="modal fade bs-example-modal-lg" data-keyboard="false" data-backdrop="static" tabindex="-1" id="agregarContacto" role="dialog" aria-labelledby="mySmallModalLabel">
-		<div class="modal-dialog modal-lg" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-circle"></i>
-						{{accion.accion}}</h4>
-				</div>
-				<div class="modal-body">
-					<form ng-submit="guardarContacto()">
-						<div class="col-lg-offset-1 col-lg-10 contenedorPrincipal">
+  <!----------------------------------------------------------------Modal Registro Contactos---------------------------------------------------------------------->
+  <div class="modal fade bs-example-modal-lg" data-keyboard="false" data-backdrop="static" tabindex="-1" id="agregarContacto" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-circle"></i>
+            {{accion.accion}}</h4>
+        </div>
+        <div class="modal-body">
+          <form ng-submit="guardarContacto()">
+            <div class="col-lg-offset-1 col-lg-10 contenedorPrincipal">
 
-							<div class="col-lg-offset-1 col-lg-4 form-horizontal formulariopersonal">
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.documento" type="text" class=" form-control colorformulario" aria-label="..." id="nombre" placeholder="Ingresar Documento" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.nombre" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Nombre" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.apellido" type="text" class=" form-control colorformulario" id="idpersonal" placeholder="Ingresar Apellido" required>
-									</div>
-								</div>  
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.correo" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Correo" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.contacto" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Contacto" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.rasocial" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Razon social" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.fnacimiento" type="date" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Fecha de Nacimiento" required>
-									</div>
-								</div>  
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.direccion" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Direccion" required>
-									</div> 
-								</div>
-							</div>
+              <div class="col-lg-offset-1 col-lg-4 form-horizontal formulariopersonal">
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.documento" type="text" class=" form-control colorformulario" aria-label="..." id="nombre" placeholder="Ingresar Documento" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.nombre" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Nombre" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.apellido" type="text" class=" form-control colorformulario" id="idpersonal" placeholder="Ingresar Apellido" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.correo" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Correo" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.contacto" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Contacto" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.rasocial" type="text" class=" form-control colorformulario" id="nombre" placeholder="Ingresar Razon social" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.fnacimiento" value="{{contacto.fnacimiento}}" type="date" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Fecha de Nacimiento" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.direccion" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Direccion" required>
+                  </div>
+                </div>
+              </div>
 
-							<div class="col-lg-offset-2 col-lg-4 form-horizontal formulariopersonal1">
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<select name="pais1" ng-model="contacto.pais" class="form-control colorformulario" required>
-											<option value="" >Seleccione País</option>
-											<option ng-repeat="pais in paises" value="{{pais}}" >{{pais}}</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.ciudad" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Ciudad" ng-disabled="disabledCelularFamilia" required>
-									</div>
-								</div>
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.departamento" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Departamento" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.telefono" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Telefono" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.pagweb" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Pagina Web" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.foto" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar foto" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.descripcion" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Descripcion" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.estado" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Estado" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.tcodigo" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Tipo" required>
-									</div>
-								</div> 
-								<div class="form-group anchura">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-										</span>
-										<input ng-model="contacto.rcodigo" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Red social" required>
-									</div>
-								</div> 
-								<!--            <div class="form-group anchura">
-												<label for="ficha" class=" col-lg-5 control-label labelpersonal">Fecha Registro</label>
-												<div class="col-lg-6">
-													<input ng-model="personal.fecharegistro" type="date" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Fecha">
-												</div>
-											</div> -->
-							</div>
-						</div>
-						<button type="submit" class="btn btn-primary btn-block btn-sm">{{btnaccion.accion}}</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+              <div class="col-lg-offset-2 col-lg-4 form-horizontal formulariopersonal1">
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <select name="pais1" ng-model="contacto.pais" class="form-control colorformulario" required>
+                      <option value="" >Seleccione País</option>
+                      <option ng-repeat="pais in paises" value="{{pais}}" >{{pais}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.ciudad" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Ciudad" ng-disabled="disabledCelularFamilia" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.departamento" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Departamento" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.telefono" type="text" class=" form-control colorformulario" id="Nombrefamiliar" placeholder="Ingresar Telefono" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.pagweb" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Pagina Web" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.foto" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar foto" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.descripcion" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Descripcion" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.estado" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Estado" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.tcodigo" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Tipo" required>
+                  </div>
+                </div>
+                <div class="form-group anchura">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                    </span>
+                    <input ng-model="contacto.rcodigo" type="text" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Red social" required>
+                  </div>
+                </div>
+                <!--            <div class="form-group anchura">
+                                <label for="ficha" class=" col-lg-5 control-label labelpersonal">Fecha Registro</label>
+                                <div class="col-lg-6">
+                                    <input ng-model="personal.fecharegistro" type="date" class=" form-control colorformulario" id="nisaprendiz" placeholder="Ingresar Fecha">
+                                </div>
+                            </div> -->
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-sm">{{btnaccion.accion}}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	<div class="modal fade bs-example-modal-sm" data-keyboard="false" data-backdrop="static" tabindex="-1" id="eliminarContacto" role="dialog" aria-labelledby="mySmallModalLabel">
-		<div class="modal-dialog modal-sm" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
-						Eliminar Contacto</h4>
-				</div>
-				<div class="modal-body">
-					<center>
-						<h4>¿Esta seguro?</h4>
-						<p>Se va a eliminar el Contacto</p>
-						<h3>{{contactoEl.nombre}} {{contactoEl.apellido}}</h3>
-					</center>
-					<button ng-click="eliminarContacto()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="modal fade bs-example-modal-sm" data-keyboard="false" data-backdrop="static" tabindex="-1" id="eliminarContacto" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
+            Eliminar Contacto</h4>
+        </div>
+        <div class="modal-body">
+          <center>
+            <h4>¿Esta seguro?</h4>
+            <p>Se va a eliminar el Contacto</p>
+            <h3>{{contactoEl.nombre}} {{contactoEl.apellido}}</h3>
+          </center>
+          <button ng-click="eliminarContacto()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 

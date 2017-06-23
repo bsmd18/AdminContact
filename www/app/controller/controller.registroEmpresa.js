@@ -1,22 +1,12 @@
-angular.module('contact').controller('registroEmpresaController' ,['$scope', 'empresaServices', '$sessionStorage', '$timeout', '$route', function ($scope, empresaServices, $sessionStorage, $timeout, $route) {
+angular.module('contact').controller('registroEmpresaController', ['$scope', 'empresaServices', '$sessionStorage', '$timeout', '$route', 'urlUploads', function ($scope, empresaServices, $sessionStorage, $timeout, $route, urlUploads) {
 
-    $scope.empresas = [];
-      
-    $scope.dataempresa = {
-        logo: '',
-        tipoE:'',
-        nit: '',
-        telefono: '',
-        razonSocial: '',
-        razonComercial: '',
-        direcion: '',
-        correo: '',
-        paginaWeb: ''
-        };
-     
-    
-  
-     $scope.pintarTabla = function () {
+    $scope.empresas = {};
+    $scope.dataempresa = {};
+    $scope.urlUploads = urlUploads;
+
+//-------------------------------------Cargar Tabla Empresdas-----------------------------------------------------
+
+    $scope.pintarTabla = function () {
       empresaServices.obtenerEnterprise.then(function successCallback(response) {
         switch (response.data.code) {
           case 200:
@@ -29,31 +19,25 @@ angular.module('contact').controller('registroEmpresaController' ,['$scope', 'em
     };
 
     $scope.pintarTabla();
-    
-    
-    
+
+//------------------------------------------------------------------------------------------------------------------
+
     $scope.insertarEmpresa = function () {
-        
-        if ($scope.frmInsertar.inputFile.$valid && $scope.empresa.logo !== '') {
-        empresaServices.agregarEnterprise($scope.empresa).then(function successCallback(response) {
-            $scope.empresa = {};
-            if (response.data.code == 300) {
-                console.log(response);
 
-            } else if (response.data.code == 500) {
-                console.log(response.data.datos);
-            } else {
-                $timeout(function () {
-                    $('#nuevaempresa').modal('toggle');
-                }, 700);
-                $timeout(function () {
-                    window.location.reload();
-                }, 1000);
+      if ($scope.frmInsertar.inputFile.$valid && $scope.dataempresa.logo !== '') {
+        empresaServices.agregarEnterprise($scope.dataempresa).then(function successCallback(response) {
 
-            }
+          $timeout(function () {
+            $('#nuevaempresa').modal('toggle');
+          }, 700);
+          $timeout(function () {
+            window.location.reload();
+          }, 1000);
+
         }, function errorCallback(response) {
-            console.error(response);
+          console.error(response);
         });
-    }
+      }
     };
-}]);
+
+  }]);

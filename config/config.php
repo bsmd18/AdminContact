@@ -2,6 +2,7 @@
 
 $config = new myConfig();
 $config->setPath('C:/xampp/htdocs/Admincontact/');
+$config->setDirUploads('C:/xampp/htdocs/Admincontact/www/uploads/');
 
 $config->setDrive('mysql');
 $config->setHost('localhost');

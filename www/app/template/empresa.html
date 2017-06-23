@@ -1,199 +1,199 @@
 <!---------------------------------------------------------------------------Cabecera---------------------------------------------------------------------------------->
 
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <br>
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#!/formularioUsuario">Usuarios</a></li>
-                    <li><a href="#!/registrocontactos">Contactos</a></li>
-                    <li><a href="#!/empresa">Empresas</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Facturas</a></li>
-                    <li><a href="#!/proyectos">Proyectos</a></li>
-                </ul>
-            </div>
-        </div>
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <br>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#!/formularioUsuario">Usuarios</a></li>
+          <li><a href="#!/registrocontactos">Contactos</a></li>
+          <li><a href="#!/empresa">Empresas</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Facturas</a></li>
+          <li><a href="#!/proyectos">Proyectos</a></li>
+        </ul>
+      </div>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
 
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle iconUser" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-off iconoBarra" aria-hidden="true"></span> <span class="caret"></span></a>
-                    <ul class="dropdown-menu panelCerrarSession">
-                        <li>
-                            <div>
-                                <div class="panel " style="width: 280px">
-                                    <div class="panel-body ">                    
-                                        <a href="#!/logout"><button class="btn-block btn-group-lg btn-success botonCerrarCession">Cerrar Session</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle iconUser" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-off iconoBarra" aria-hidden="true"></span> <span class="caret"></span></a>
+          <ul class="dropdown-menu panelCerrarSession">
+            <li>
+              <div>
+                <div class="panel " style="width: 280px">
+                  <div class="panel-body ">
+                    <a href="#!/logout"><button class="btn-block btn-group-lg btn-success botonCerrarCession">Cerrar Session</button></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
 
 
 <!--------------------------------------------------------------------Tabla Empresa------------------------------------------------------------------------------>
 
 <div class="row col-lg-offset-1 col-lg-10 table-responsive tablausers">
-    <table class="table">
-        <tr>
-            <th>Logo</th>
-            <th>tipo</th>
-            <th>Descripción</th>
-            <th>Nit</th>
-            <th>Razón Social</th>
-            <th>Razón Comercial</th>
-            <th>Dirección</th>
-            <th>Telefóno</th>
-            <th>Correo</th>
-            <th>Pagina Web</th>
-            <th>Acción</th>
-        </tr>
-        <tr ng-repeat="empresa in empresas">
-            <td>{{empresa.emp_logo}}</td>
-            <td>{{empresa.emt_nombre}}</td>
-            <td>{{empresa.emt_descripcion}}</td>
-            <td>{{empresa.emp_nit}}</td>
-            <td>{{empresa.emp_razon_social}}</td>
-            <td>{{empresa.emp_razon_comercial}}</td>
-            <td>{{empresa.emp_direccion}}</td>
-            <td>{{empresa.emp_telefono}}</td>
-            <td>{{empresa.emp_correo}}</td>
-            <td>{{empresa.emp_pagina}}</td>
-            <td>
-                <i aria-hidden="true" data-toggle="modal" data-target="#usuarios" ng-click="editar(empresa)"  title="Editar" class="glyphicon glyphicon-edit btnElTabla"></i>
-                <i ng-click="eliminar(empresa)" title="Eliminar" class="glyphicon glyphicon-trash btnElTabla"></i>
-            </td>
-        </tr>
-    </table>
+  <table class="table">
+    <tr>
+      <th>Logo</th>
+      <th>tipo</th>
+      <th>Descripción</th>
+      <th>Nit</th>
+      <th>Razón Social</th>
+      <th>Razón Comercial</th>
+      <th>Dirección</th>
+      <th>Telefóno</th>
+      <th>Correo</th>
+      <th>Pagina Web</th>
+      <th>Acción</th>
+    </tr>
+    <tr ng-repeat="empresa in empresas">
+      <td class="centro"><center><img src="{{urlUploads + empresa.emp_logo}}" class="img-responsive imgTEmpresas"></center></td>
+    <td>{{empresa.emt_nombre}}</td>
+    <td>{{empresa.emt_descripcion}}</td>
+    <td>{{empresa.emp_nit}}</td>
+    <td>{{empresa.emp_razon_social}}</td>
+    <td>{{empresa.emp_razon_comercial}}</td>
+    <td>{{empresa.emp_direccion}}</td>
+    <td>{{empresa.emp_telefono}}</td>
+    <td>{{empresa.emp_correo}}</td>
+    <td>{{empresa.emp_pagina}}</td>
+    <td>
+      <i aria-hidden="true" data-toggle="modal" data-target="#usuarios" ng-click="editar(empresa)"  title="Editar" class="glyphicon glyphicon-edit btnElTabla"></i>
+      <i ng-click="eliminar(empresa)" title="Eliminar" class="glyphicon glyphicon-trash btnElTabla"></i>
+    </td>
+    </tr>
+  </table>
 </div>
 <!-----------------------------------------------------------modal registrar nueva empresa-------------------------------------------------------------------------------------->
 <div class="modal fade bs-example-modal-lg" data-keyboard="false" data-backdrop="static" tabindex="-1" id="nuevaempresa" role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
 
-            <div class="modal-header">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-circle"></i>
-                        Nueva Empresa</h4>
-                </div>
-            </div>
-            <div class="modal-body">
-                <form name="frmInsertar" ng-submit="insertarEmpresa()">
-                    <div class="col-lg-offset-1 col-lg-10 contenedorPrincipal">
-
-                        <div class="col-lg-offset-1 col-lg-4 form-horizontal formulariopersonal">
-                            <div class="form-group anchura">
-                                <div class="input-group">
-                                    <span title="Seleccionar Foto" class="input-group-addon"><i class="glyphicon glyphicon-picture"></i>
-                                    </span>
-                                    <input readonly ng-model="dataempresa.logo.$ngfName" type="text" class="form-control fontImput" aria-label="..." placeholder="Seleccionar el logo">
-                                    <span ngf-select ng-model="dataempresa.logo" name="inputFile" ngf-pattern="'image/*'"
-                                          ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="300" 
-                                          ngf-resize="{width: 300, height: 300}" class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon"> <i class="fa fa-building"></i>
-                                    </span>
-                                    <select ng-model="dataempresa.tipoE" class="form-control input-sm" aria-label="..." required>
-                                        <option value="">TIPO DE EMPRESA</option>
-                                        <option value="1">Hotelera</option>
-                                        <option value="2">Unipersonal</option>
-                                        <option value="3">Presta Servicios</option>
-                                        <option value="4">Desarrolladora</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group anchura">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i>
-                                    </span>
-                                    <input ng-model="dataempresa.nit" type="text" class=" form-control colorformulario" id="nit" placeholder="Ingresar Nit" required>
-                                </div>
-                            </div>
-                            <div class="form-group anchura">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-phone-square"></i>
-                                    </span>
-                                    <input ng-model="dataempresa.telefono" type="text" class=" form-control colorformulario" id="telefono" placeholder="Ingresar telefono" required>
-                                </div>
-                            </div>
-                            <div class="form-group anchura">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-book"></i>
-                                    </span>
-                                    <input ng-model="datempresa.razonSocial" type="text" class=" form-control colorformulario" id="razonSocial" placeholder="Ingresar razon social" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-offset-2 col-lg-4 form-horizontal formulariopersonal1">
-
-                            <div class="form-group anchura">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-book"></i>
-                                    </span>
-                                    <input ng-model="dataempresa.razonComercial" type="text" class=" form-control colorformulario" id="razonComercial" placeholder="Ingresar razon comercial" required>
-                                </div>
-                            </div>
-                            <div class="form-group anchura">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i>
-                                    </span>
-                                    <input ng-model="dataempresa.dirrecion" type="text" class=" form-control colorformulario" id="direccion" placeholder="Ingresar dirección" required>
-                                </div>
-                            </div> 
-                            <div class="form-group anchura">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope"></i>
-                                    </span>
-                                    <input ng-model="dataempresa.correo" type="email" class=" form-control colorformulario" id="correo" placeholder="Ingresar correo" required>
-                                </div>
-                            </div> 
-                            <div class="form-group anchura">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-file-text"></i>
-                                    </span>
-                                    <input ng-model="dataempresa.paginaWeb" type="text" class=" form-control colorformulario" id="paginaWeb" placeholder="Ingresar pagina web" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block btn-sm">Guardar</button>
-                    <button type="reset" class="btn btn-success btn-block btn-sm">Limpiar</button>
-                </form>
-            </div>
+      <div class="modal-header">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><i class="fa fa-plus-circle"></i>
+            Nueva Empresa</h4>
         </div>
+      </div>
+      <div class="modal-body">
+        <form name="frmInsertar" ng-submit="insertarEmpresa()">
+          <div class="col-lg-offset-1 col-lg-10 contenedorPrincipal">
+
+            <div class="col-lg-offset-1 col-lg-4 form-horizontal formulariopersonal">
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span title="Seleccionar Foto" class="input-group-addon"><i class="glyphicon glyphicon-picture"></i>
+                  </span>
+                  <input readonly ng-model="dataempresa.logo.$ngfName" type="text" class="form-control fontImput" aria-label="..." placeholder="Seleccionar el logo">
+                  <span ngf-select ng-model="dataempresa.logo" name="inputFile" ngf-pattern="'image/*'"
+                        ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="300"
+                        ngf-resize="{width: 300, height: 300}" class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"> <i class="fa fa-building"></i>
+                  </span>
+                  <select ng-model="dataempresa.tipoE" class="form-control input-sm" aria-label="..." required>
+                    <option value="">TIPO DE EMPRESA</option>
+                    <option value="1">Hotelera</option>
+                    <option value="2">Unipersonal</option>
+                    <option value="3">Presta Servicios</option>
+                    <option value="4">Desarrolladora</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i>
+                  </span>
+                  <input ng-model="dataempresa.nit" type="text" class=" form-control colorformulario" id="nit" placeholder="Ingresar Nit" required>
+                </div>
+              </div>
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone-square"></i>
+                  </span>
+                  <input ng-model="dataempresa.telefono" type="text" class=" form-control colorformulario" id="telefono" placeholder="Ingresar telefono" required>
+                </div>
+              </div>
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-book"></i>
+                  </span>
+                  <input ng-model="dataempresa.razonSocial" type="text" class=" form-control colorformulario" id="razonSocial" placeholder="Ingresar razon social" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-offset-2 col-lg-4 form-horizontal formulariopersonal1">
+
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-book"></i>
+                  </span>
+                  <input ng-model="dataempresa.razonComercial" type="text" class=" form-control colorformulario" id="razonComercial" placeholder="Ingresar razon comercial" required>
+                </div>
+              </div>
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i>
+                  </span>
+                  <input ng-model="dataempresa.direccion" type="text" class=" form-control colorformulario" id="direccion" placeholder="Ingresar dirección" required>
+                </div>
+              </div>
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope"></i>
+                  </span>
+                  <input ng-model="dataempresa.correo" type="email" class=" form-control colorformulario" id="correo" placeholder="Ingresar correo" required>
+                </div>
+              </div>
+              <div class="form-group anchura">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-file-text"></i>
+                  </span>
+                  <input ng-model="dataempresa.paginaWeb" type="text" class=" form-control colorformulario" id="paginaWeb" placeholder="Ingresar pagina web" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-sm">Guardar</button>
+          <button type="reset" class="btn btn-success btn-block btn-sm">Limpiar</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 <form>
-    <div class="col-lg-12 botonesaplicacion text-center">
-        <span title="Nuevo" class="glyphicon glyphicon-plus-sign" aria-hidden="true" data-toggle="modal" data-target="#nuevaempresa"></span>
-        <a href="#!/menuPrincipal"><button type="submit" class="glyphicon glyphicon-remove"></button></a>
-    </div>
+  <div class="col-lg-12 botonesaplicacion text-center">
+    <span title="Nuevo" class="glyphicon glyphicon-plus-sign" aria-hidden="true" data-toggle="modal" data-target="#nuevaempresa"></span>
+    <a href="#!/menuPrincipal"><button type="submit" class="glyphicon glyphicon-remove"></button></a>
+  </div>
 </form>
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------->

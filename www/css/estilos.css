@@ -1,83 +1,90 @@
 /*------------------------------Formulario Registro Usuarios---------------------------------------*/
 
 .principal{
-    text-align: center;
+  text-align: center;
 }
 
 .contenedorPrincipal{
-    /*border: 2px solid gray;*/
-    padding: 1vh;
+  /*border: 2px solid gray;*/
+  padding: 1vh;
 }
 
 .formulariopersonal1{
-    /*padding: 1vh;*/
-    padding-right: 1vh;
-    /*border: 2px solid background;*/
+  /*padding: 1vh;*/
+  padding-right: 1vh;
+  /*border: 2px solid background;*/
 }
 
 .botonesaplicacion{
-    /*border:  2px solid greenyellow;*/
-    margin-top: 1vh;
-    font-size: 5vh;
-    color: royalblue;
-	height: 5vh;
+  /*border:  2px solid greenyellow;*/
+  margin-top: 1vh;
+  font-size: 5vh;
+  color: royalblue;
+  height: 5vh;
 }
 
 .btnElTabla{
-    cursor: pointer;
-    font-size: 25px;
-    color: dodgerblue;
+  cursor: pointer;
+  font-size: 25px;
+  color: dodgerblue;
 }
 
 .msgsuccess{
-    margin-top: -1vh;
-    margin-bottom: 1vh;
-	text-align: center;
+  margin-top: -1vh;
+  margin-bottom: 1vh;
+  text-align: center;
 }
 
 .tablausers{
-	height: 78vh;
+  height: 78vh;
 }
 
 /*--------------------------------------Login---------------------------------------------------*/
 
 .imglogin{
-    width: 101%; 
-    height: 105%;
+  width: 101%;
+  height: 105%;
 }
 .centrarLogin{
-    /*margin: 0 auto 0 auto;*/ 
-    border-radius: 2px;
-    border: 2px solid darkgray;
-    margin-top: 8vh;
+  /*margin: 0 auto 0 auto;*/
+  border-radius: 2px;
+  border: 2px solid darkgray;
+  margin-top: 8vh;
 }
 
 .usuariotex{
-    text-align: center;
-    margin-top: 4vh;
+  text-align: center;
+  margin-top: 4vh;
 }
 .contrasenatex{
-    text-align: center;
-    margin-top: 1vh;
+  text-align: center;
+  margin-top: 1vh;
 }
 
 .colorTexbox{
-    font-size: 2vh;
-    border-width:0;
-    border-bottom: 1px solid darkgray;
-    font-family: cursive, Verdana, Arial;
+  font-size: 2vh;
+  border-width:0;
+  border-bottom: 1px solid darkgray;
+  font-family: cursive, Verdana, Arial;
 }
 
 .icono{
-    font-size: 4vh;
-    margin-right: -4vh;
-    padding-right: -4vh;
+  font-size: 4vh;
+  margin-right: -4vh;
+  padding-right: -4vh;
 }
 
 .btn-info{
-    font-size: 2vh;
+  font-size: 2vh;
 }
 
 .msgerror{
-    margin-top: 1vh;
+  margin-top: 1vh;
+}
+
+/*--------------------------------------------Formulario Empresas------------------------------------*/
+
+.imgTEmpresas{
+  width:60px;
+  height:40px;
 }
