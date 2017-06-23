@@ -6,6 +6,7 @@
 angular.module('contact').constant('rolAdmin', 1);
 angular.module('contact').constant('rolInvitado', 2);
 angular.module('contact').constant('serverUrl', 'http://localhost/AdminContact/www/server.php/');
+angular.module('contact').constant('urlUploads', 'http://localhost/Contacto/www/uploads/');
 
 angular.module('contact').config(['$middlewareProvider',
     function middlewareProviderConfig($middlewareProvider) {

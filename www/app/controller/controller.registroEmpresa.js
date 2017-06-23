@@ -9,9 +9,9 @@ angular.module('contact').controller('registroEmpresaController' ,['$scope', 'em
         telefono: '',
         razonSocial: '',
         razonComercial: '',
-        dirrecion: '',
+        direcion: '',
         correo: '',
-        paginaWeb: '',
+        paginaWeb: ''
         };
      
     
@@ -33,9 +33,10 @@ angular.module('contact').controller('registroEmpresaController' ,['$scope', 'em
     
     
     $scope.insertarEmpresa = function () {
-        empresaServices.agregarEnterprise($scope.empresa, $scope.empresa1).then(function successCallback(response) {
+        
+        if ($scope.frmInsertar.inputFile.$valid && $scope.empresa.logo !== '') {
+        empresaServices.agregarEnterprise($scope.empresa).then(function successCallback(response) {
             $scope.empresa = {};
-            $scope.empres1 = {};
             if (response.data.code == 300) {
                 console.log(response);
 
@@ -53,5 +54,6 @@ angular.module('contact').controller('registroEmpresaController' ,['$scope', 'em
         }, function errorCallback(response) {
             console.error(response);
         });
+    }
     };
 }]);

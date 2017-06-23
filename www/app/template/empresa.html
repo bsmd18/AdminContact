@@ -100,15 +100,19 @@
                 </div>
             </div>
             <div class="modal-body">
-                <form ng-submit="insertarEmpresa()">
+                <form name="frmInsertar" ng-submit="insertarEmpresa()">
                     <div class="col-lg-offset-1 col-lg-10 contenedorPrincipal">
 
                         <div class="col-lg-offset-1 col-lg-4 form-horizontal formulariopersonal">
                             <div class="form-group anchura">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-picture-o"></i>
+                                    <span title="Seleccionar Foto" class="input-group-addon"><i class="glyphicon glyphicon-picture"></i>
                                     </span>
-                                    <input ng-model="dataempresa.logo" type="text" class=" form-control colorformulario" aria-label="..." id="logo" placeholder="Ingresar logo" required>
+                                    <input readonly ng-model="dataempresa.logo.$ngfName" type="text" class="form-control fontImput" aria-label="..." placeholder="Seleccionar el logo">
+                                    <span ngf-select ng-model="dataempresa.logo" name="inputFile" ngf-pattern="'image/*'"
+                                          ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="300" 
+                                          ngf-resize="{width: 300, height: 300}" class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
+                                    </span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -159,7 +163,7 @@
                             <div class="form-group anchura">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i>
-                                  </span>
+                                    </span>
                                     <input ng-model="dataempresa.dirrecion" type="text" class=" form-control colorformulario" id="direccion" placeholder="Ingresar dirección" required>
                                 </div>
                             </div> 
