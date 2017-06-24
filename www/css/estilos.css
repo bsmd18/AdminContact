@@ -3,9 +3,29 @@
 .principal{
   text-align: center;
 }
+/*estilo para la imagen de inicio*/
+#demo03{
+  font-family: serif;
+  font-size: 50px;;
+  margin-bottom:  50px;
+}
+
+.hover03 figure img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.3);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.hover03 figure:hover img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
 .imagencrm{
   margin-top: 100px;
 }
+
+
+/*--------------------------------------------------------------------------------------------------*/
 .contenedorPrincipal{
   /*border: 2px solid gray;*/
   padding: 1vh;
