@@ -2,8 +2,20 @@
 
 class empresaDAO extends dataSource implements Iempresa {
 
-  public function delete($nit) {
-
+  public function delete($nit, $logico = true) {
+     if ($logico === true) {
+            $sql = 'UPDATE empresas SET emp_estado = "Desactivado" WHERE emp_nit = :nit';
+            $params = array(
+                ':nit' => $nit
+            );
+            return $this->execute($sql, $params);
+        } else if ($logico === false) {
+            $sql = 'DELETE FROM empresas WHERE emp_nit = :nit AND emp_estado IS "Activo"';
+            $params = array(
+                ':nit' => (integer) $nit
+            );
+            return $this->execute($sql, $params);
+        }
   }
 
   public function insert(\empresa $empresa) {

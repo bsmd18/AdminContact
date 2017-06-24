@@ -7,6 +7,10 @@ angular.module('contact').service('empresaServices', ['$http', 'Upload', 'server
       });
 
     };
+    this.eliminarEnterprise = function(data){
+//      console.log(data);
+      return $http.post(serverUrl + 'eliminarEmpresa',$.param(data));
+    };
 
     this.obtenerEnterprise = $http.get(serverUrl + 'obtenerEmpresa');
 

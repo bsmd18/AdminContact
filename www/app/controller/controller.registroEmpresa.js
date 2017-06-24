@@ -22,6 +22,9 @@ angular.module('contact').controller('registroEmpresaController', ['$scope', 'em
 
 //------------------------------------------------------------------------------------------------------------------
 
+
+//------------------------------------insertar Empresa------------------------------------------------------------------------------
+
     $scope.insertarEmpresa = function () {
 
       if ($scope.frmInsertar.inputFile.$valid && $scope.dataempresa.logo !== '') {
@@ -38,6 +41,40 @@ angular.module('contact').controller('registroEmpresaController', ['$scope', 'em
           console.error(response);
         });
       }
+    };
+//--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+//----------------------------------------------------eliminar Empresa---------------------------------------------------
+     $scope.eliminar = function (dato) {
+      $('#eliminarEmpresa').modal('toggle');
+      $scope.nitEliminar = dato.emp_nit;
+    };
+    
+    $scope.empresaEliminada = false;
+    
+    
+    $scope.Eliminarempresa = function () {
+      empresaServices.eliminarEnterprise({nit: $scope.nitEliminar}).then(function successCallback(response) {
+        $scope.empresaEliminada = false;
+        if (response.data.code == 500) {
+        } else {
+          $scope.empresaEliminada = true;
+          $timeout(function () {
+            $('#eliminarEmpresa').modal('toggle');
+          }, 700);
+          $timeout(function () {
+            // $route.reload();
+            window.location.reload();
+          }, 1000);
+        }
+      }, function errorCallback(response) {
+        console.error(response);
+      });
     };
 
   }]);

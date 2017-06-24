@@ -3,7 +3,9 @@
 .principal{
   text-align: center;
 }
-
+.imagencrm{
+  margin-top: 100px;
+}
 .contenedorPrincipal{
   /*border: 2px solid gray;*/
   padding: 1vh;
